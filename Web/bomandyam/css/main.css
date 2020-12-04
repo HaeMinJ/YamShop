@@ -6,6 +6,11 @@ ul{
     list-style: none;
 }
 
+button{
+    border: 0;
+    background: none;
+}
+
 #wrap{
     display: flex;
     flex-direction: column;
@@ -96,24 +101,32 @@ ul{
 .main_visual{
     display: flex;
     justify-content: center;
-    position: relative;
+
     width: 100%;
 }
 
-.ban_btn1{
-    position: absolute;
-    top: 170px;
-    left: 140px;
-    background-color: transparent;
-    border: none;
+.slide{
+    width: 1190px;
+    overflow: hidden;
+    position: relative;
 }
 
-.ban_btn2{
+.slide ul{
+    display: flex;
+    padding-left: 0;
+    width: 4788px;
+}
+
+.slide button.prev{
     position: absolute;
-    top: 170px;
-    right: 50px;
-    background-color: transparent;
-    border: none;
+    left: 0;
+    top : 130px;
+}
+
+.slide button.next{
+    position: absolute;
+    right: 0px;
+    top : 130px;
 }
 
 .best{
