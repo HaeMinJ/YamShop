@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>login</title>
-        <link rel="stylesheet" href="login.css">
+        <title>join</title>
+        <link rel="stylesheet" href="../css/login.css">
     </head>
     <body>
         <div id="wrap">
@@ -54,22 +54,25 @@
                 <!--카테고리헤더-->
             </div>
             <div id="container">
-                <div class="login_text">로그인</div>
-                <div class="login_box">
-                    <div class="item login_txt">회원 로그인</div>
-                    <input type="text" class="item id_box" onfocus="this.value=''" value="아이디(이메일)"></input>
-                    <input type="text" class="item pwd_box" onfocus="this.value=''" value="비밀번호"></input>
-                    <button type="button" class="item log_box">로그인</button>
-                    <label>
-                        <input type="checkbox" class="item2 loginCheck_txt">아이디 저장</input>
-                    </label>
-                    <a href="#" class="item2 pwd_find">비밀번호 찾기</a>
-                    <a href="#" class="item2 id_find">아이디 찾기</a>
-                    
+                <div class="join_text">회원가입</div>
+                <div class="join_box">
+                    <input type="text" onfocus="this.value=''" class="join_item id_input" value="*아이디(이메일 형식)"></input>
+                    <input type="text" onfocus="this.value=''" class="join_item pwd_input" value="*비밀번호"></input>
+                    <input type="text" onfocus="this.value=''" class="join_item pwd2_input" value="*비밀번호 확인"></input>
+                    <input type="text" onfocus="this.value=''" class="join_item name_input" value="*이름"></input>
+                    <input type="text" onfocus="this.value=''" class="join_item phone_input" value="*전화번호"></input>
+                    <input type="text" onfocus="this.value=''" class="join_item address_input" value="*주소"></input>
+                    <div class="join_item input_text">성별
+                        <label><input type="radio" class="genderCheck_txt" name="gender" value="F">여자</input></label>
+                        <label><input type="radio" class="genderCheck_txt" name="gender" value="M">남자</input></label>
+                    </div>
+                    <div class="join_item input_text">
+                        생년월일&nbsp;&nbsp;
+                        <input type="date" class="">
+                    </div>
+                    <button type="button" class="item jn_box">회원가입</button>
+                    </div>
                 </div>
-                <a href="#" class="login_img">
-                    <img src="img/" alt="회원가입창 이동">
-                </a>
             </div>
             <div id="footer">
                 <div class="top_footer"></div>
@@ -93,4 +96,4 @@
                 </div>
             </div>
     </body>
-</html>
+</html>    
