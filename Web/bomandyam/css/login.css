@@ -1,3 +1,6 @@
+body{
+    font-family: Rounded Mplus 1c;
+}
 a {
     text-decoration: none;
     color: #6F6F6F;
@@ -153,7 +156,7 @@ button{
     background: #FFCB12;
 }
 
-.log_box:hover{
+.log_box:hover,.jn_box:hover{
     opacity: 70%;
     border: #ffcb12;
 }
@@ -187,6 +190,61 @@ button{
 
 
 /*로그인*/
+
+.join_text{
+    width:550px;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 35px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid black;
+}
+.join_box{
+    width: 520px;
+    height: 700px;
+
+}
+.join_item{
+    width: 520px;
+    height: 48px;
+    margin-top: 13px;
+    margin-left: 13px;
+    line-height: 55px;
+    outline: 0;
+}
+
+.id_input,.pwd_input,.pwd2_input,.name_input,.phone_input,.address_input{
+    font-weight: 500;
+    font-size: 18px;
+    color: #6F6F6F;
+    border: 1px solid #6F6F6F;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+.input_text{
+    padding-left: 15px;
+}
+
+.genderCheck_txt{
+    margin-left: 30px;
+}
+
+.jn_box{
+    width: 530px;
+    height: 53px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 55px;
+    margin-top: 20px;
+    margin-left: 15px;
+    padding-right: 20px;
+    text-align: center;
+    background: #FFCB12;
+}
+
+/*join*/
 
 #footer{
     display: flex;
