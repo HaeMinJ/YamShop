@@ -34,4 +34,5 @@
         interval = setInterval(next, 3000);
     }
     jQuery( document ).ready( init );
+    // window.onload = init;
 })();
