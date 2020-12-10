@@ -23,19 +23,19 @@
 }
 
 .petImage_input label{
-    display: inline-block; 
-    padding: .5em .75em; 
-    color: #999; 
-    font-size: inherit; 
-    line-height: normal; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 160px;
+    height: 160px;
+    color: #979797;
+    line-height: normal;
     vertical-align: middle;
-    background-color: #fdfdfd; 
+    background-color: #ffe68a;
     cursor: pointer; 
-    border: 1px solid #ebebeb; 
-    border-bottom-color: #e2e2e2; 
-    border-radius: .25em;
-    
-
+    border: 3px solid #ffcb12;
+    border-radius: 100px;
 }
 .petImage_input input[type="file"] {
     /* 파일 필드 숨기기 */
@@ -46,7 +46,6 @@
     overflow: hidden;
     clip: rect(0,0,0,0);
     border:0;
-   
 }
 
 .dog_click input[type="radio"],
@@ -81,6 +80,16 @@
     height: 50px;
     margin: 10px;
     outline: 0;
+}
+
+.petImage_input{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.upload_btn{
+    color: #ffcb12;
 }
 
 .petName_input{

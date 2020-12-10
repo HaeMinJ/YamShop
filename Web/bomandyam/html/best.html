@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/best.css">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="../js/best.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -65,11 +66,11 @@
     <!--pick 아이콘-->
     <div id="container">
         <div class="tab_menu">
-            <div class="tab_title">
-                <a class="tab_btn" href="#">DOG</a>
-                <a class="tab_btn" href="#">CAT</a>
-            </div>
-            <div class="tab_dog">
+            <ul class="tab_title">
+                <li class="tab_btn current" data-tab="tab-1">DOG</li>
+                <li class="tab_btn" data-tab="tab-2">CAT</li>
+            </ul>
+            <div id="tab-1" class="tab_content current">
                 <div class="main_ani_best">
                     <div></div>
                     <div class="ani_best_title">
@@ -212,7 +213,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="tab_cat" style="display: none">
+            <div id="tab-2" class="tab_content">
                 <div class="main_ani_best">
                     <div></div>
                     <div class="ani_best_title">
