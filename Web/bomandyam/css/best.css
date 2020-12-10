@@ -6,19 +6,26 @@
     align-items: center;
 }
 
-.tab_title{
+ul.tab_title{
+    display: flex;
     font-size: 36px;
-
 }
 
-.tab_btn{
-    background: #ffcb12;
+ul.tab_title li{
+    background: #979797;
     border-radius: 10px;
     padding: 5px 18px 5px 18px;
     font-weight: bolder;
+    cursor: pointer;
 }
 
-.tab_cat{
-    position: absolute;
-    top: 210px;
+ul.tab_title li.current{
+    background: #ffcb12;
+}
+
+.tab_content{
+
+}
+
+.tab_content.current{
 }

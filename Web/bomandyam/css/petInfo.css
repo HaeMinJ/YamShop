@@ -1,0 +1,126 @@
+#container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.petInfo_text{
+    width:520px;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    
+}
+
+.petInfo_box{
+    width: 520px;
+    height: 700px;
+}
+
+.petImage_input label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 160px;
+    height: 160px;
+    color: #979797;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #ffe68a;
+    cursor: pointer; 
+    border: 3px solid #ffcb12;
+    border-radius: 100px;
+}
+.petImage_input input[type="file"] {
+    /* 파일 필드 숨기기 */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border:0;
+}
+
+.dog_click input[type="radio"],
+.cat_click input[type="radio"]{
+    display: none;
+}
+
+.dog_click input[type="radio"]+ span,
+.cat_click input[type="radio"] + span{
+    display:inline-block;
+    background:none;
+    border:1px solid #dfdfdf;  
+    padding:0px 10px;
+    text-align:center;
+    width: 215px;
+    height:64px;
+    line-height:56px;
+    font-size: 32px;
+    font-weight:500;
+    cursor:pointer;
+}
+
+.dog_click input[type="radio"]:checked+ span,
+.cat_click input[type="radio"]:checked + span{
+    border:1px solid #ffcb12;
+    background:#ffcb12;
+    color:#fff;
+}
+
+.petInfo_item{
+    width: 485px;
+    height: 50px;
+    margin: 10px;
+    outline: 0;
+}
+
+.petImage_input{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.upload_btn{
+    color: #ffcb12;
+}
+
+.petName_input{
+    margin-top: 30px;
+}
+
+.petName_input,.petSpecies_input,.petAge_input,.petGender_input,.petWeight_input,.petEtc_input{
+    font-weight: 500;
+    font-size: 18px;
+    color: #333333;
+    background-color: #ffe68a;
+    border: 1px solid #fcb721;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+.register_button{
+    width: 500px;
+    height: 53px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 55px;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-right: 20px;
+    text-align: center;
+    background: #FFCB12;
+}
+.register_button:hover{
+    opacity: 70%;
+    border: #ffcb12;
+}
+
+/**/
