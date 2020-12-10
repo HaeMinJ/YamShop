@@ -24,8 +24,10 @@ with urlopen('https://search.shopping.naver.com/best100v2/detail.nhn?catId=50000
         i = i+1
     print(allData)
 
+
     headers = {'Content-Type': 'application/json; chearset=utf-8'}
-    data = {'title': 'dummy title', 'id': 1, 'message': 'hello world!'}
-    req = request.Request('http://127.0.0.1:5000', headers=headers, data=json.dumps(data).encode('utf-8'))
-    res = request.urlopen(req)
-    print(str(res.status_code) + " | " + res.text)
+    for d in allData:
+        data = {'name': d[0][0], 'price': d[0][1], 'imageUrl' : d[0][2], 'categorySeq' : 0}
+        req = request.Request('https://api.bomandyam.shop:3000/product', headers=headers, data=json.dumps(data).encode('utf-8'))
+        res = request.urlopen(req)
+        print(str(res.status) + " | " + res.read().decode('utf-8'))
