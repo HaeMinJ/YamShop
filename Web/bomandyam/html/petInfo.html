@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>login</title>
-        <link rel="stylesheet" href="../css/login.css">
+        <title>Pet Information</title>
+        <link rel="stylesheet" href="../css/petInfo.css">
         <link rel="stylesheet" href="../css/main.css">
     </head>
     <body>
@@ -52,25 +52,25 @@
                         </a>
                     </div>
                 </div>
-                <!--카테고리헤더-->
             </div>
+            <!--카테고리헤더-->
             <div id="container">
-                <div class="login_text">LOGIN</div>
-                <div class="login_box">
-                    <div class="item login_txt">회원 로그인</div>
-                    <input type="text" class="item id_box" onfocus="this.value=''" value="아이디(이메일)"></input>
-                    <input type="text" class="item pwd_box" onfocus="this.value=''" value="비밀번호"></input>
-                    <button type="button" class="item log_box">로그인</button>
-                    <label>
-                        <input type="checkbox" class="item2 loginCheck_txt">아이디 저장</input>
-                    </label>
-                    <a href="#" class="item2 pwd_find">비밀번호 찾기</a>
-                    <a href="#" class="item2 id_find">아이디 찾기</a>
-                    
+                <div class="petInfo_text">동물 정보 입력</div>
+                <div class="petInfo_box">
+                    <div class="petInfo_item petImage_input"> 
+                        <label for="ex_file">업로드</label> 
+                        <input type="file" id="ex_file"> 
+                    </div>
+                    <label class="petInfo_item dog_click"><input type="radio" checked="checked" name="species"><span>강아지</span></input></label>
+                    <label class="petInfo_item cat_click"><input type="radio" name="species"><span>고양이</span></input></label>
+                    <input type="text" onfocus="this.value=''" class="petInfo_item petName_input" value="*이름"></input>
+                    <input type="text" onfocus="this.value=''" class="petInfo_item petSpecies_input" value="*종"></input>
+                    <input type="text" onfocus="this.value=''" class="petInfo_item petAge_input" value="*나이"></input>
+                    <input type="text" onfocus="this.value=''" class="petInfo_item petGender_input" value="*성별"></input>
+                    <input type="text" onfocus="this.value=''" class="petInfo_item petWeight_input" value="*몸무게"></input>
+                    <input type="text" onfocus="this.value=''" class="petInfo_item petEtc_input" value="기타사항"></input>
+                    <button type="button" class="petInfo_item register_button">회원가입</button>
                 </div>
-                <a href="#" class="login_img">
-                    <img src="../img" alt="회원가입창 이동">
-                </a>
             </div>
             <div id="footer">
                 <div class="top_footer"></div>
