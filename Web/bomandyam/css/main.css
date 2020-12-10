@@ -117,12 +117,14 @@ button{
     position: absolute;
     left: 0;
     top : 130px;
+    outline: 0;
 }
 
 .slide button.next{
     position: absolute;
     right: 0px;
     top : 130px;
+    outline: 0;
 }
 
 .best{
@@ -182,6 +184,7 @@ button{
     align-items: center;
     width: 100%;
     background-color: #404040;
+    margin : 0;
 }
 
 .top_footer{
