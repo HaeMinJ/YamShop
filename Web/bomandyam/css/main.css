@@ -246,3 +246,24 @@ button{
 }
 
 /*footer css*/
+
+#P_container{
+    
+    height: 2500px;
+}
+
+#P_box{
+    text-align: left;
+    width: 900px;
+    height: 350px;
+    padding-top: 20px;
+
+}
+
+.privacy_text{
+    width: 900px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px black;
+}
