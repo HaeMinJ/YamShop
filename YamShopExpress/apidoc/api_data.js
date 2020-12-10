@@ -700,6 +700,46 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/product",
+    "title": "Request Product List",
+    "name": "GetProduct",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>Current page number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "size",
+            "description": "<p>Page size</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "post",
+    "url": "/product",
+    "title": "Add Product",
+    "name": "Product_Post_For_Crawler",
+    "group": "Product",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
     "url": "/user/token-verification",
     "title": "Check accessToken",
     "name": "Check_token_토큰_로그인",
