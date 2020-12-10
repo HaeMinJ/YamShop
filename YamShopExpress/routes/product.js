@@ -10,7 +10,6 @@ const pool = require('../utils/pool')
  * @apiParam {Number} page Current page number
  * @apiParam {Number} size Page size
  *
- * @apiUse Product
  */
 
 router.get('/', async (req, res, next) => {
