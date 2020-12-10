@@ -1,11 +1,10 @@
 #container{
     width: 100%;
+    height: 1100px;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    justify-content: space-around;
     align-items: center;
-    
 }
 
 .petInfo_text{
