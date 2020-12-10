@@ -24,10 +24,8 @@ ul.tab_title li.current{
 }
 
 .tab_content{
-    position: absolute;
-    display: none;
+
 }
 
 .tab_content.current{
-    display: inherit;
 }
