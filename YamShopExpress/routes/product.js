@@ -33,7 +33,7 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const { name, price, imageUrl, categorySeq } = req.body
     try {
-        const data = await pool.query('insert into Product set ?',[{name : name, price : price, imageUrl : imageUrl, quantity : 100, categorySeq : categorySeq}] )
+        const data = await pool.query('insert into Product set ?',[{name : name, price : price, imageUrl : imageUrl, quantity : 100, categorySeq : Number(categorySeq)}] )
         return res.json(data[0])
     } catch (err) {
         return res.status(500).json(err)
