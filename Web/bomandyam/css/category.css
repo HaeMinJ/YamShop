@@ -3,6 +3,7 @@
     display: inline-flex;
     flex-direction: row;
     justify-content: flex-start;
+    justify-content: center;
     flex-wrap: nowrap;
    
 }
@@ -13,8 +14,9 @@
    margin-left: 10px;
 }
 .cateItem2{
+    width: 1000px;
     align-items: flex-start;
-   padding-left: 20px;
+    padding-left: 20px;
 }
 
 
@@ -49,7 +51,7 @@
 .cate_text{
     font-size: 24px;
     margin:5px;
-    width: 540px;
+    width: 1000px;
     margin-top: 30px;
     padding-bottom: 10px;
     border-bottom: solid 1px #767676;
@@ -58,7 +60,7 @@
 
 .cate_sort{
     background-color: #eeeeee;
-    width:540px;
+    width:1000px;
     height: 47px;
     line-height: 50px;
 }

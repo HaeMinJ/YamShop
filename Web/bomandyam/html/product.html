@@ -17,10 +17,10 @@
             <div class="headerContainer">
                 <div></div>
                 <h1 class="logo">
-                    <a href="../html/main.html">
+                    <a href="../index.html">
                         <img src="../img/logo.svg" alt="메인페이지 로고">
                     </a>
-                    <a class="logo_text" href="../html/main.html">
+                    <a class="logo_text" href="../index.html">
                         <div class="logo_text">BOM and YAM</div>
                     </a>
                 </h1>
@@ -118,6 +118,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="product_tab_area">
+                <div class="product_tab">
+                    <button class="tab_btn active" onclick="openTab(event,'tab1')">상품 정보</button>
+                    <button class="tab_btn" onclick="openTab(event,'tab2')">후기 및 문의</button>
+                    <button class="tab_btn" onclick="openTab(event,'tab2')">배송/교환/반품</button>
+                </div>
+                <div id="tab1" class="tabcontent" style="display: flex">상품 정보</div>
+                <div id="tab2" class="tabcontent" style="display: none">후기 및 문의</div>
+                <div id="tab3" class="tabcontent" style="display: none">배송/교환/반품</div>
+
             </div>
         </div>
 <!--        컨테이너 영역-->
