@@ -17,10 +17,10 @@
             <div class="headerContainer">
                 <div></div>
                 <h1 class="logo">
-                    <a href="../html/main.html">
+                    <a href="../index.html">
                         <img src="../img/logo.svg" alt="메인페이지 로고">
                     </a>
-                    <a class="logo_text" href="../html/main.html">
+                    <a class="logo_text" href="../index.html">
                         <div class="logo_text">BOM and YAM</div>
                     </a>
                 </h1>
@@ -118,6 +118,46 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="product_tab_area">
+                <div class="product_tab">
+                    <div class="tab_btn_area">
+                        <button class="tab_btn active" onclick="openTab(event,'tab1')">상품 정보</button>
+                        <button class="tab_btn" style="margin-left: -4px" onclick="openTab(event,'tab2')">후기 및 문의</button>
+                        <button class="tab_btn" style="margin-left: -5px" onclick="openTab(event,'tab3')">배송/교환/반품</button>
+                    </div>
+                </div>
+                <div class="tab_content">
+                    <div id="tab1" class="tabcontent" style="display: block">상품 정보</div>
+                    <div id="tab2" class="tabcontent" style="display: none">후기 및 문의</div>
+                    <div id="tab3" class="tabcontent" style="display: none">
+                        <div class="tab_info_title">배송안내</div>
+                        <ul>
+                            <li class="tab_info_content">
+                                배송비 : 기본배송료는 2,500원 입니다. (도서,산간,오지 일부지역은 배송비가 추가될 수 있습니다)  40,000원 이상 구매시 무료배송입니다.
+                            </li>
+                            <li class="tab_info_content">
+                                본 상품의 평균 배송일은 2일입니다.(입금 확인 후) 설치 상품의 경우 다소 늦어질수 있습니다.[배송예정일은 주문시점(주문순서)에 따른 유동성이 발생하므로 평균 배송일과는 차이가 발생할 수 있습니다.]
+                            </li>
+                        </ul>
+                        <div class="tab_info_title">교환 및 반품 안내</div>
+                        <ul>
+                            <li>취소/반품/교환/환불은 배송 완료 후 7일 이내에 가능합니다.</li>
+                            <li>상품 하자 및 오배송의 경우 수령일자로부터 7일 이내에 보내주셔야 펫츠비 부담으로 교환/반품이 가능합니다.</li>
+                            <li>교환/반품 물건을 보내실 때는 반드시 상담원과 통화 후 CJ대한통운으로 보내주시기 바랍니다.</li>
+                            <li>(타 택배 이용 시 발생하는 초과운임은 고객님 부담입니다.)</li>
+                            <li>교환 및 반품 시에는 배송된 포장박스와 포장재를 사용하고 사은품을 포함하여 처음과 같이 안전하게 보내주시기 바랍니다.</li>
+                            <li>(사은품 회수가 안될 경우, 교환 및 반품에 제한이 있을 수 있으니 꼭 동봉 바랍니다.)</li>
+                            <li>네이버페이 자동수거 접수 서비스 이용이 불가하므로, 교환 및 반품은 시 펫츠비 고객센터를 이용해주시기 바랍니다.</li>
+                            <li>단순 변심에 의한 교환 및 반품은 미사용 제품에 한하며, 왕복 배송비는 고객님 부담입니다.</li>
+                            <li>└ 교환 시 : 반송비 + 재배송비 = 총 5,000원</li>
+                            <li>└ 반품 시 : 초기 배송비(무료배송 포함) + 반송비 = 최소 2,500~5,000원 (상품에 따라 최대 15,000원 추가 발생)</li>
+                            <li>위탁상품의 교환/반품 비용은 업체별로 상이할 수 있습니다.</li>
+                            <li>교환/반품 배송비 결제는 고객센터로 문의 주세요.(박스 동봉 시 처리 불가)</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 <!--        컨테이너 영역-->
