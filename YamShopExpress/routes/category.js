@@ -15,7 +15,7 @@ const pool = require('../utils/pool')
  */
 
 router.get('/', async (req, res, next) => {
-    const { page, size } = req.query
+    const {page, size} = req.query
     try {
         const data = await pool.query('select * from ProdCategory limit ?, ?', [Number(page), Number(size)])
         return res.json(data[0])
@@ -36,7 +36,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     let userInfo = req.userInfo;
-    if(userInfo && userInfo.typeSeq === 1) {
+    if (userInfo && userInfo.typeSeq === 1) {
         const {categoryName, parentCategory} = req.body
         try {
             const data = await pool.query('insert into ProdCategory set ?', [{
@@ -47,10 +47,11 @@ router.post('/', async (req, res, next) => {
         } catch (err) {
             return res.status(500).json(err)
         }
-    }else{
-        res.status(403).send({"message" : "Token Error!"});
+    } else {
+        res.status(403).send({"message": "Token Error!"});
     }
 })
+
 
 /**
  * @api {patch} /category/:categorySeq Modify Category
@@ -64,7 +65,7 @@ router.post('/', async (req, res, next) => {
 
 router.patch('/:categorySeq', async (req, res, next) => {
     let userInfo = req.userInfo;
-    if(userInfo && userInfo.typeSeq === 1) {
+    if (userInfo && userInfo.typeSeq === 1) {
         const {categorySeq} = req.params
         const {categoryName, parentCategory} = req.body
         try {
@@ -73,8 +74,8 @@ router.patch('/:categorySeq', async (req, res, next) => {
         } catch (err) {
             return res.status(500).json(err)
         }
-    }else{
-        res.status(403).send({"message" : "Token Error!"});
+    } else {
+        res.status(403).send({"message": "Token Error!"});
     }
 })
 
@@ -90,7 +91,7 @@ router.patch('/:categorySeq', async (req, res, next) => {
 
 router.delete('/:categorySeq', async (req, res, next) => {
     let userInfo = req.userInfo;
-    if(userInfo && userInfo.typeSeq === 1) {
+    if (userInfo && userInfo.typeSeq === 1) {
         const {categorySeq} = req.params
         try {
             const data = await pool.query('delete from ProdCategory where categorySeq = ?', [categorySeq])
@@ -98,8 +99,8 @@ router.delete('/:categorySeq', async (req, res, next) => {
         } catch (err) {
             return res.status(500).json(err)
         }
-    }else{
-        res.status(403).send({"message" : "Token error"});
+    } else {
+        res.status(403).send({"message": "Token error"});
     }
 })
 
@@ -114,7 +115,7 @@ router.delete('/:categorySeq', async (req, res, next) => {
  */
 
 router.get('/:categorySeq', async (req, res, next) => {
-    const { categorySeq } = req.params
+    const {categorySeq} = req.params
     try {
         const data = await pool.query('select * from ProdCategory where categorySeq = ?', [categorySeq])
         return res.json(data[0][0])

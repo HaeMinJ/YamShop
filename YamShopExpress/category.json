@@ -1,0 +1,475 @@
+[
+
+  {
+    "categorySeq" : 1,
+  "categoryName" : "강아지",
+  "parentCategory" : 0
+  },
+  {
+    "categorySeq" : 2,
+  "categoryName" : "고양이",
+  "parentCategory" : 0
+  },
+
+  {
+    "categorySeq" : 3,
+  "categoryName" : "사료",
+  "parentCategory" : 1
+  },
+  {
+    "categorySeq" : 4,
+  "categoryName" : "간식",
+  "parentCategory" : 1
+  },
+  {
+    "categorySeq" : 5,
+  "categoryName" : "건강/관리",
+  "parentCategory" : 1
+  },
+  {
+    "categorySeq" : 6,
+  "categoryName" : "배변용품",
+  "parentCategory" : 1
+  },
+  {
+    "categorySeq" : 7,
+  "categoryName" : "미용/목욕",
+  "parentCategory" : 1
+  },
+  {
+    "categorySeq" : 8,
+  "categoryName" : "장난감/훈련",
+  "parentCategory" : 1
+  },
+  {
+    "categorySeq" : 9,
+  "categoryName" : "건식사료",
+  "parentCategory" : 3
+  },
+  {
+  "categorySeq" : 10,
+  "categoryName" : "소프트사료",
+  "parentCategory" : 3
+  },
+  {
+    "categorySeq" : 11,
+  "categoryName" : "습식사료",
+  "parentCategory" : 3
+  },
+  {
+    "categorySeq" : 12,
+  "categoryName" : "수제사료",
+  "parentCategory" : 3
+  },
+  {
+    "categorySeq" : 13,
+  "categoryName" : "분유/우유",
+  "parentCategory" : 3
+  },
+  {
+    "categorySeq" : 14,
+  "categoryName" : "동결건조 사료",
+  "parentCategory" : 3
+  },
+  {
+    "categorySeq" : 15,
+  "categoryName" : "개껌",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 16,
+  "categoryName" : "육포/건조간식",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 17,
+  "categoryName" : "수제간식",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 18,
+  "categoryName" : "비스킷/스낵",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 19,
+  "categoryName" : "동결건조 간식",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 20,
+  "categoryName" : "캔/파우치",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 21,
+  "categoryName" : "트릿/스틱",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 22,
+  "categoryName" : "통살/소시지",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 23,
+  "categoryName" : "음료",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 24,
+  "categoryName" : "빵/케이크",
+  "parentCategory" : 4
+  },
+  {
+    "categorySeq" : 25,
+  "categoryName" : "배변패드",
+  "parentCategory" : 5
+  },
+  {
+    "categorySeq" : 26,
+  "categoryName" : "배변판",
+  "parentCategory" : 5
+  },
+  {
+    "categorySeq" : 27,
+  "categoryName" : "기저귀/팬티",
+  "parentCategory" : 5
+  },
+  {
+    "categorySeq" : 28,
+  "categoryName" : "탈취제/소독제",
+  "parentCategory" : 5
+  },
+  {
+    "categorySeq" : 29,
+  "categoryName" : "배변유도제",
+  "parentCategory" : 5
+  },
+  {
+    "categorySeq" : 30,
+  "categoryName" : "배변봉투/집게",
+  "parentCategory" : 5
+  },
+  {
+    "categorySeq" : 31,
+  "categoryName" : "영양제",
+  "parentCategory" : 6
+  },
+  {
+    "categorySeq" : 32,
+  "categoryName" : "눈/귀 관리용품",
+  "parentCategory" : 6
+  },
+  {
+    "categorySeq" : 33,
+  "categoryName" : "강아지유산균",
+  "parentCategory" : 6},
+  {
+    "categorySeq" : 34,
+  "categoryName" : "치약",
+  "parentCategory" : 6
+  },
+  {
+    "categorySeq" : 35,
+  "categoryName" : "칫솔",
+  "parentCategory" : 6
+  },
+  {
+    "categorySeq" : 36,
+  "categoryName" : "구강청결제",
+  "parentCategory" : 6
+  },
+  {
+    "categorySeq" : 37,
+  "categoryName" : "구강티슈",
+  "parentCategory" : 6
+  },
+  {
+    "categorySeq" : 38,
+  "categoryName" : "샴푸/린스/비누",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 39,
+  "categoryName" : "에센스/향수/밤",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 40,
+  "categoryName" : "브러시/빗",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 41,
+  "categoryName" : "이발기",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 42,
+  "categoryName" : "미용가위",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 43,
+  "categoryName" : "발톱/발 관리",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 44,
+  "categoryName" : "드라이기/드라이",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 45,
+  "categoryName" : "타월/가운",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 46,
+  "categoryName" : "기타 미용/목욕용품",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 47,
+  "categoryName" : "물티슈/크리너",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 48,
+  "categoryName" : "샤워기/욕조",
+  "parentCategory" : 7
+  },
+  {
+    "categorySeq" : 49,
+  "categoryName" : "노즈워크",
+  "parentCategory" : 8
+  },
+  {
+    "categorySeq" : 50,
+  "categoryName" : "장난감/토이",
+  "parentCategory" : 8
+  },
+  {
+    "categorySeq" : 50,
+  "categoryName" : "공/원반",
+  "parentCategory" : 8
+  },
+  {
+    "categorySeq" : 51,
+  "categoryName" : "훈련용",
+  "parentCategory" : 9
+  },
+  {
+    "categorySeq" : 52,
+  "categoryName" : "자동장난감",
+  "parentCategory" : 9
+  },
+  {
+    "categorySeq" : 53,
+  "categoryName" : "사료",
+  "parentCategory" : 2
+  },
+  {
+    "categorySeq" : 54,
+  "categoryName" : "간식",
+  "parentCategory" : 2
+  },
+  {
+    "categorySeq" : 55,
+  "categoryName" : "배변용품",
+  "parentCategory" : 2
+  },
+  {
+    "categorySeq" : 56,
+  "categoryName" : "건강/관리용품",
+  "parentCategory" : 2
+  },
+  {
+    "categorySeq" : 57,
+  "categoryName" : "캣타워",
+  "parentCategory" : 2
+  },
+  {
+    "categorySeq" : 58,
+  "categoryName" : "장난감",
+  "parentCategory" : 2
+  },
+  {
+    "categorySeq" : 59,
+  "categoryName" : "건식사료",
+  "parentCategory" : 53
+  },
+  {
+    "categorySeq" : 60,
+  "categoryName" : "습식사료",
+  "parentCategory" : 53
+  },
+  {
+    "categorySeq" : 61,
+  "categoryName" : "수제사료",
+  "parentCategory" : 53
+  },
+  {
+    "categorySeq" : 62,
+  "categoryName" : "분유/우유",
+  "parentCategory" : 53
+  },
+  {
+    "categorySeq" : 63,
+  "categoryName" : "동결건조 사료",
+  "parentCategory" : 53
+  },
+  {
+    "categorySeq" : 64,
+  "categoryName" : "캔/파우치",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 65,
+  "categoryName" : "수제간식",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 66,
+  "categoryName" : "육포/건조간식",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 67,
+  "categoryName" : "동결건조 간식",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 68,
+  "categoryName" : "트릿/스틱",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 69,
+  "categoryName" : "통살/소시지",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 70,
+  "categoryName" : "비스킷/스낵",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 71,
+  "categoryName" : "캣닢/캣그라스",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 72,
+  "categoryName" : "음료",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 73,
+  "categoryName" : "빵/케이크",
+  "parentCategory" : 54
+  },
+  {
+    "categorySeq" : 74,
+  "categoryName" : "응고형모래",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 75,
+  "categoryName" : "흡수형모래",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 76,
+  "categoryName" : "후드형화장실",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 77,
+  "categoryName" : "평판형화장실",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 78,
+  "categoryName" : "거름망형화장실",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 79,
+  "categoryName" : "배변패드",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 80,
+  "categoryName" : "탈취제/소독제",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 81,
+  "categoryName" : "매트/발판",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 82,
+  "categoryName" : "분변통/모래삽",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 83,
+  "categoryName" : "자동화장실",
+  "parentCategory" : 55
+  },
+  {
+    "categorySeq" : 84,
+  "categoryName" : "영양제",
+  "parentCategory" : 56
+  },
+  {
+    "categorySeq" : 85,
+  "categoryName" : "고양이유산균",
+  "parentCategory" : 56
+  },
+  {
+    "categorySeq" : 86,
+  "categoryName" : "구강관리용품",
+  "parentCategory" : 56
+  },
+  {
+    "categorySeq" : 87,
+  "categoryName" : "눈/귀 관리용품",
+  "parentCategory" : 56
+  },
+  {
+    "categorySeq" : 88,
+  "categoryName" : "낚시/막대",
+  "parentCategory" : 58
+  },
+  {
+    "categorySeq" : 89,
+  "categoryName" : "토이/쿠션/공",
+  "parentCategory" : 58
+  },
+  {
+    "categorySeq" : 90,
+  "categoryName" : "터널/주머니",
+  "parentCategory" : 58
+  },
+  {
+    "categorySeq" : 91,
+  "categoryName" : "자동장난감",
+  "parentCategory" : 58
+  },
+  {
+    "categorySeq" : 92,
+  "categoryName" : "스크래쳐",
+  "parentCategory" : 56
+  },
+  {
+    "categorySeq" : 93,
+  "categoryName" : "레이저포인터",
+  "parentCategory" : 56
+  }
+]
+
+
