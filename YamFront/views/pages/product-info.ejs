@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>상품판매 페이지</title>
+    <link rel="stylesheet" href="../stylesheets/pick_icon.css">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/product.css">
+    <link rel="stylesheet" href="../stylesheets/floatbanner.css">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../javascripts/floatbanner.js"></script>
+    <script type="text/javascript" src="../javascripts/product.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="header_wrap">
+        <div class="headerContainer">
+            <div></div>
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.svg" alt="메인페이지 로고">
+                </a>
+                <a class="logo_text" href="../index.html">
+                    <div class="logo_text">BOM and YAM</div>
+                </a>
+            </h1>
+            <div class="navi">
+                <ul class="navi_list">
+                    <li style="padding-right: 25px">
+                        <a href="../html/join.html">회원가입</a>
+                        /
+                        <a href="../html/login.html">로그인</a>
+                    </li>
+                    <li>
+                        <a href="#">장바구니</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--로고있는 헤더-->
+        <div class="headerBanner">
+            <div class="categoryWrap">
+                <div class="btnAllCategory">전체 카테고리</div>
+                <ul class="navi_list">
+                    <li style="padding-right: 25px">
+                        <a href="../html/best.html">베스트</a>
+                    </li>
+                    <li>
+                        <a href="#">노하우</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search_area">
+                <input type="text" id="search_form" name="keyword" class="search_text">
+                <a href="#" class="search_img">
+                    <img src="../images/search.svg" alt="메인페이지 로고">
+                </a>
+            </div>
+        </div>
+        <!--카테고리헤더-->
+    </div>
+    <!--헤더-->
+    <a href="../html/bomspick.html">
+        <div class="BOM_icon">BOM's pick</div>
+    </a>
+    <a href="../html/yamspick.html">
+        <div class="YAM_icon">YAM's pick</div>
+    </a>
+    <!--픽 고정배너-->
+    <div id="container">
+        <div class="float_area">
+            <div class="float_menu">
+                <div class="side_banner">
+                    <div class="side_title">추천상품</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="purchase_product">
+            <div class="purchase_category">
+                <div><img src="../images/homeicon.svg" alt="홈아이콘"></div>
+                <div>&nbsp>&nbsp강아지&nbsp>&nbsp사료&nbsp>&nbsp간식</div>
+            </div>
+            <div class="purchase_info">
+                <div><img src="../images/product.svg" width="400px" height="400px" alt="판매 상품 이미지"></div>
+                <div class="purchase_area">
+                    <div class="purchase_title">
+                        로얄캐닌 독 말티즈 어덜트 1.5kg
+                    </div>
+                    <div class="purchase_pay">
+                        <div>판매가</div>
+                        <div>17,000원</div>
+                    </div>
+                    <div style="color: #00ffba">택배 배송</div>
+                    <div class="color_font">16시 이전 결제시 당일 출고 예정</div>
+                    <div class="delivery_info">
+                        <div class="purchase_icon"><img src="../images/box.svg" alt="택배">재고있음</div>
+                        <div class="purchase_icon"><img src="../images/truck.svg" alt="트럭">무료배송</div>
+                    </div>
+                    <div class="purchase_box">
+                        <div class="space_between">
+                            <div>수량</div>
+                            <div>총 상품금액</div>
+                        </div>
+                        <div class="result_pay">
+                            <div class="quantity">
+                                <button type="button" style="font-size: 20px" onclick="fnCalCount('m', this);">-</button>
+                                <input type="text" name="pop_out" value="0" readonly="readonly" style="text-align: center"/>
+                                <button type="button" style="font-size: 20px" onclick="fnCalCount('p', this);">+</button>
+                            </div>
+                            <div style="font-size: 25px"><b>17,000원</b></div>
+                        </div>
+
+                        <div class="purchase_btn">
+                            <button class="purchase_button" type="button">장바구니</button>
+                            <button class="purchase_button" style="background: #ffcb12" type="button">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product_tab_area">
+            <div class="product_tab">
+                <div class="tab_btn_area">
+                    <button class="tab_btn active" onclick="openTab(event,'tab1')">상품 정보</button>
+                    <button class="tab_btn" style="margin-left: -4px" onclick="openTab(event,'tab2')">후기 및 문의</button>
+                    <button class="tab_btn" style="margin-left: -5px" onclick="openTab(event,'tab3')">배송/교환/반품</button>
+                </div>
+            </div>
+            <div class="tab_content">
+                <div id="tab1" class="tabcontent" style="display: block">상품 정보</div>
+                <div id="tab2" class="tabcontent" style="display: none">후기 및 문의</div>
+                <div id="tab3" class="tabcontent" style="display: none">
+                    <div class="tab_info_title">배송안내</div>
+                    <ul>
+                        <li class="tab_info_content">
+                            배송비 : 기본배송료는 2,500원 입니다. (도서,산간,오지 일부지역은 배송비가 추가될 수 있습니다)  40,000원 이상 구매시 무료배송입니다.
+                        </li>
+                        <li class="tab_info_content">
+                            본 상품의 평균 배송일은 2일입니다.(입금 확인 후) 설치 상품의 경우 다소 늦어질수 있습니다.[배송예정일은 주문시점(주문순서)에 따른 유동성이 발생하므로 평균 배송일과는 차이가 발생할 수 있습니다.]
+                        </li>
+                    </ul>
+                    <div class="tab_info_title">교환 및 반품 안내</div>
+                    <ul>
+                        <li>취소/반품/교환/환불은 배송 완료 후 7일 이내에 가능합니다.</li>
+                        <li>상품 하자 및 오배송의 경우 수령일자로부터 7일 이내에 보내주셔야 펫츠비 부담으로 교환/반품이 가능합니다.</li>
+                        <li>교환/반품 물건을 보내실 때는 반드시 상담원과 통화 후 CJ대한통운으로 보내주시기 바랍니다.</li>
+                        <li>(타 택배 이용 시 발생하는 초과운임은 고객님 부담입니다.)</li>
+                        <li>교환 및 반품 시에는 배송된 포장박스와 포장재를 사용하고 사은품을 포함하여 처음과 같이 안전하게 보내주시기 바랍니다.</li>
+                        <li>(사은품 회수가 안될 경우, 교환 및 반품에 제한이 있을 수 있으니 꼭 동봉 바랍니다.)</li>
+                        <li>네이버페이 자동수거 접수 서비스 이용이 불가하므로, 교환 및 반품은 시 펫츠비 고객센터를 이용해주시기 바랍니다.</li>
+                        <li>단순 변심에 의한 교환 및 반품은 미사용 제품에 한하며, 왕복 배송비는 고객님 부담입니다.</li>
+                        <li>└ 교환 시 : 반송비 + 재배송비 = 총 5,000원</li>
+                        <li>└ 반품 시 : 초기 배송비(무료배송 포함) + 반송비 = 최소 2,500~5,000원 (상품에 따라 최대 15,000원 추가 발생)</li>
+                        <li>위탁상품의 교환/반품 비용은 업체별로 상이할 수 있습니다.</li>
+                        <li>교환/반품 배송비 결제는 고객센터로 문의 주세요.(박스 동봉 시 처리 불가)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--        컨테이너 영역-->
+    <div id="footer">
+        <div class="top_footer"></div>
+        <div class="bottom_footer">
+            <div class="footer_area">
+                <div class="page_title">
+                    <div class="footer_title">BOM and YAM</div>
+                    <div style="padding-bottom: 10px">대표전화</div>
+                    <b>1644-9601</b>
+                </div>
+                <div class="page_info">
+                    <div class="up_info">회사소개<div class="line"></div>이용약관<div class="line"></div>개인정보처리방침</div>
+                    <div class="down_info">(주)펫츠비 대표 : 전얌<br>
+                        주소 : 서울시 노원구 공릉로232 서울과학기술대학교 미래관3층<br>
+                        사업자 등록번호 : 111-22-33333 통신판매업신고번호 : 2020-공릉-0000<br>
+                        개인정보관리자 : 김봄 kimbom@bomandyam.com TEL : 1212-1212<br>
+                        copyright (c) www.bomandyam.shop all rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+</div>
+</body>
+</html>

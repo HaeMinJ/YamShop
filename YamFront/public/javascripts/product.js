@@ -1,7 +1,7 @@
 function fnCalCount(type, ths){
-    var $input = $(ths).parents("div").find("input[name='pop_out']");
-    var tCount = Number($input.val());
-    var tEqCount = 20
+    let $input = $(ths).parents("div").find("input[name='pop_out']");
+    let tCount = Number($input.val());
+    let tEqCount = 20
 
     if(type=='p'){
         if(tCount < tEqCount) $input.val(Number(tCount)+1);
@@ -12,7 +12,7 @@ function fnCalCount(type, ths){
 }
 
 function openTab(evt, tabName) {
-    var i, tabcontent, tab_btn;
+    let i, tabcontent, tab_btn;
     tabcontent = document.getElementsByClassName("tabcontent");
     for(i = 0; i < tabcontent.length; i++){
         tabcontent[i].style.display = "none";
