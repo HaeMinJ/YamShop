@@ -1,11 +1,277 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>봄이와 얌</title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <link rel="stylesheet" href="stylesheets/pick_icon.css">
+  <link rel="stylesheet" href="stylesheets/floatbanner.css">
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script type="text/javascript" src="javascripts/main.js"></script>
+  <script type="text/javascript" src="javascripts/floatbanner.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="header_wrap">
+    <div class="headerContainer">
+      <div></div>
+      <h1 class="logo">
+        <a href="../html/main.html">
+          <img src="images/logo.svg" alt="메인페이지 로고">
+        </a>
+        <a class="logo_text" href="../html/main.html">
+          <div class="logo_text">BOM and YAM</div>
+        </a>
+      </h1>
+      <div class="navi">
+        <ul class="navi_list">
+          <li style="padding-right: 25px">
+            <a href="html/join.html">회원가입</a>
+            /
+            <a href="html/login.html">로그인</a>
+          </li>
+          <li>
+            <a href="#">장바구니</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--로고있는 헤더-->
+    <div class="headerBanner">
+      <div class="categoryWrap">
+        <div class="btnAllCategory">전체 카테고리</div>
+        <ul class="navi_list">
+          <li style="padding-right: 25px">
+            <a href="html/best.html">베스트</a>
+          </li>
+          <li>
+            <a href="#">노하우</a>
+          </li>
+        </ul>
+      </div>
+      <div class="search_area">
+        <input type="text" id="search_form" name="keyword" class="search_text">
+        <a href="#" class="search_img">
+          <img src="images/search.svg" alt="메인페이지 로고">
+        </a>
+      </div>
+    </div>
+    <!--카테고리헤더-->
+  </div>
+  <!--헤더-->
+  <a href="html/bomspick.html">
+    <div class="BOM_icon">BOM's pick</div>
+  </a>
+  <a href="html/yamspick.html">
+    <div class="YAM_icon">YAM's pick</div>
+  </a>
+  <!--    픽 고정배너-->
+  <div id="container">
+    <div class="float_area">
+      <div class="float_menu">
+        <div class="side_banner">
+          <div class="side_title">추천상품</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="main_visual">
+      <div class="slide">
+        <ul>
+          <li><img src="images/banner1.svg" alt="배너1"></li>
+          <li><img src="images/banner2.svg" alt="배너2"></li>
+          <li><img src="images/banner3.svg" alt="배너3"></li>
+          <li><img src="images/banner4.svg" alt="배너4"></li>
+        </ul>
+        <button class="prev" type="button"><img src="images/bannerbtn1.svg" alt="이전버튼"></button>
+        <button class="next" type="button"><img src="images/bannerbtn2.svg" alt="다음버튼"></button>
+      </div>
+    </div>
+    <!--메인베너-->
+    <div class="best">
+      <div class="main_ani_best">
+        <div></div>
+        <div class="ani_best_title">
+          DOG BEST
+        </div>
+        <button class="more_btn">more</button>
+      </div>
+      <ul class="ani_best">
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">건강백서 건강한 피부 6kg</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">건강백서 건강한 피부 6kg</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">건강백서 건강한 피부 6kg</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">건강백서 건강한 피부 6kg</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="main_ani_best">
+        <div></div>
+        <div class="ani_best_title">
+          CAT BEST
+        </div>
+        <button class="more_btn">more</button>
+      </div>
+      <ul class="ani_best">
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
+                <b>32,000원</b>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="main_ani_best">
+        <div></div>
+        <div class="ani_best_title">
+          NKOWHOW
+        </div>
+        <button class="more_btn">more</button>
+      </div>
+      <ul class="ani_best">
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/yam.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">얌이와의 설레는 아이컨택</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/bom.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">봄이에게 모델포즈 시키는 법</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/yam.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">과자를 바라보고 있는 얌</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ani_product">
+              <img src="images/bom.svg" width="200px" height="200px" alt="얌이">
+              <div class="product_text">
+                <div class="product_title">자기가 귀여운걸 아는게 분명해</div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--베스트 영역-->
+  </div>
+  <!--컨테이너 영역-->
+  <div id="footer">
+    <div class="top_footer"></div>
+    <div class="bottom_footer">
+      <div class="footer_area">
+        <div class="page_title">
+          <div class="footer_title">BOM and YAM</div>
+          <div style="padding-bottom: 10px">대표전화</div>
+          <b>1644-9601</b>
+        </div>
+        <div class="page_info">
+          <div class="up_info">회사소개<div class="line"></div>이용약관<div class="line"></div>개인정보처리방침</div>
+          <div class="down_info">(주)펫츠비 대표 : 전얌<br>
+            주소 : 서울시 노원구 공릉로232 서울과학기술대학교 미래관3층<br>
+            사업자 등록번호 : 111-22-33333 통신판매업신고번호 : 2020-공릉-0000<br>
+            개인정보관리자 : 김봄 kimbom@bomandyam.com TEL : 1212-1212<br>
+            copyright (c) www.bomandyam.shop all rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+</div>
+</body>
 </html>
+
