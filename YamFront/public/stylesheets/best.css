@@ -1,0 +1,31 @@
+.tab_menu{
+    width: 100%;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul.tab_title{
+    display: flex;
+    font-size: 36px;
+}
+
+ul.tab_title li{
+    background: #979797;
+    border-radius: 10px;
+    padding: 5px 18px 5px 18px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+ul.tab_title li.current{
+    background: #ffcb12;
+}
+
+.tab_content{
+
+}
+
+.tab_content.current{
+}

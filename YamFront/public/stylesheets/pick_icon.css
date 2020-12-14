@@ -1,0 +1,32 @@
+.BOM_icon{
+    position: fixed;
+    left:0;
+    top:220px;
+    width:110px;
+    height: 40px;
+    border-radius: 5px;
+    background: #FFCB12;
+    font-weight: 800;
+    font-size: 16px;
+    text-align: center;
+    line-height: 37px;
+    color: black;
+    box-shadow: 1px 1px 5px grey;
+
+}
+
+.YAM_icon{
+    position: fixed;
+    left:0;
+    top:266px;
+    width:110px;
+    height: 40px;
+    border-radius: 5px;
+    background: white;
+    font-weight: 800;
+    font-size: 16px;
+    text-align: center;
+    line-height: 37px;
+    color: black;
+    box-shadow: 1px 1px 5px grey;
+}

@@ -1,0 +1,25 @@
+.float_area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.float_menu{
+    width: 1450px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.side_banner{
+    position: absolute;
+    top: 130px;
+    height: 300px;
+    border: 1px solid #ffcb12;
+}
+
+.side_title{
+    width: 60px;
+    background: #ffcb12;
+    padding: 3px 15px;
+    font-size: 15px;
+}
