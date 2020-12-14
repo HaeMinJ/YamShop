@@ -147,7 +147,7 @@ router.post('/signup', async (req, res, next) => {
       gender : gender,
       registerTime : Date.now(),
       salt : salt,
-      typeSeq : 0
+      typeSeq : 1
     }]);
 
     return res.json(data[0])

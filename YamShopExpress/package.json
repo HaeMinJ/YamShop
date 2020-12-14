@@ -8,7 +8,7 @@
   "description": "봄이와 얌 REST API 문서입니다.",
   "apidoc": {
     "title": "봄이와 얌 - API DOCUMENTATION",
-    "url": "https://api.bomandyam.shop"
+    "url": "https://api.bomandyam.shop:3000"
   },
   "dependencies": {
     "apidoc": "^0.25.0",
