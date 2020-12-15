@@ -3,7 +3,7 @@
         <img src=<%= product.imageUrl %> width="200px" height="200px" alt=<%= product.name%>>
         <div class="product_text">
             <div class="product_title"><%= product.name %></div>
-            <b><%= product.price%></b>
+            <b><%= product.price.toLocaleString() %>원</b>
         </div>
     </div>
 </a>
