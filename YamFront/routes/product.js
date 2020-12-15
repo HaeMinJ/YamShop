@@ -13,7 +13,8 @@ router.get('/:prodSeq', async function(req, res, next) {
     let prodSeq = req.params.prodSeq;
     let result = await fetch('https://api.bomandyam.shop:3000/product/'+prodSeq)
     let product = await result.json()
-    res.render('pages/product-list', { product: product });
+    console.log(product);
+    res.render('pages/product-info', { product: product });
 });
 
 module.exports = router;

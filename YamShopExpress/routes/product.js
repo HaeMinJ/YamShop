@@ -35,7 +35,7 @@ router.get('/:prodSeq', async (req, res, next) => {
     const { prodSeq } = req.params
     try {
         const data = await pool.query('select * from Product where prodSeq = ?', [Number(prodSeq)])
-        return res.json(data[0])
+        return res.json(data[0][0])
     } catch (err) {
         return res.status(500).json(err)
     }
