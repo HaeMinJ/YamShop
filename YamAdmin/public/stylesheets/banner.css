@@ -13,19 +13,16 @@
     padding: 40px 0 40px 0;
 }
 
-ul{
-    list-style: none;
+ol{
     padding-left: 0;
 }
 
-ul li{
+ol li{
     font-weight: bolder;
     font-size: 30px;
     color: #6F6F6F;
     padding-bottom: 20px;
     width: 800px;
-    display: flex;
-    justify-content: space-between;
 }
 
 button{
@@ -36,6 +33,7 @@ button{
     color: #c29800;
     background: #ffeaa1;
     border-radius: 13px;
+    float: right;
 }
 
 .file_btn{

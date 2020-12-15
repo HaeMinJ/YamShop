@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
+    <title>title</title>
     <link rel='stylesheet' href='/stylesheets/header.css' />
     <link rel='stylesheet' href='/stylesheets/container.css' />
     <link rel='stylesheet' href='/stylesheets/banner.css' />
@@ -18,11 +18,11 @@
             <div class="banner_title">
                 PRODUCT 관리
             </div>
-            <ul>
-                <% for (var i = 0; i < 6; i++ ) {  %>
-                    <li><%= i+1 %>. 상품<%= i+1 %><button>삭제</button></li>
-                <% } %>
-            </ul>
+            <ol>
+                <% products.forEach(product => { %>
+                    <li><%= product.name %><button>삭제</button></li>
+                <% }) %>
+            </ol>
         </div>
         <div>
             <div class="banner_title">상품 추가</div>

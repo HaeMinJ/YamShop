@@ -18,6 +18,7 @@ var knowhowRouter = require('./routes/knowhow');
 var app = express();
 
 // view engine setup
+global.fetch = require("node-fetch");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

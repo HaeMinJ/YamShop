@@ -6,6 +6,5 @@ fetch('https://api.bomandyam.shop:3000/category?page='+page+'&size='+size,{
 .then(response => {
     for (var category of response){
         console.log(category.categoryName)
-
     }
 })
