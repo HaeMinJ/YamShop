@@ -21,14 +21,14 @@
                 <div>&nbsp>&nbsp강아지&nbsp>&nbsp사료&nbsp>&nbsp간식</div>
             </div>
             <div class="purchase_info">
-                <div><img src="../images/product.svg" width="400px" height="400px" alt="판매 상품 이미지"></div>
+                <div><img src=<%= product.imageUrl %> width="400px" height="400px" alt="판매 상품 이미지"></div>
                 <div class="purchase_area">
                     <div class="purchase_title">
-                        로얄캐닌 독 말티즈 어덜트 1.5kg
+                        <%= product.name %>
                     </div>
                     <div class="purchase_pay">
                         <div>판매가</div>
-                        <div>17,000원</div>
+                        <div><%= product.price %></div>
                     </div>
                     <div style="color: #00ffba">택배 배송</div>
                     <div class="color_font">16시 이전 결제시 당일 출고 예정</div>
@@ -47,7 +47,7 @@
                                 <input type="text" name="pop_out" value="0" readonly="readonly" style="text-align: center"/>
                                 <button type="button" style="font-size: 20px" onclick="fnCalCount('p', this);">+</button>
                             </div>
-                            <div style="font-size: 25px"><b>17,000원</b></div>
+                            <div style="font-size: 25px"><b><%= product.name %></b></div>
                         </div>
 
                         <div class="purchase_btn">

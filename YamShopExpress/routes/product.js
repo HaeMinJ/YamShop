@@ -23,6 +23,25 @@ router.get('/', async (req, res, next) => {
 })
 
 /**
+ * @api {get} /product/:prodSeq Request ProductInfo
+ * @apiName GetProductInfo
+ * @apiGroup Product
+ *
+ * @apiParam {Int} prodSeq
+ *
+ */
+
+router.get('/:prodSeq', async (req, res, next) => {
+    const { prodSeq } = req.params
+    try {
+        const data = await pool.query('select * from Product where prodSeq = ?', [Number(prodSeq)])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
+
+/**
  * @api {post} /product Add Product
  * @apiName Product Post For Crawler
  * @apiGroup Product
