@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    margin: 0 auto;
+    height: 150px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6F6F6F;
+    font-weight: bolder;
+}
+
+.head{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout_btn{
+    font-size: 18px;
+    float: left;
+    color: #ffcb12;
+}
