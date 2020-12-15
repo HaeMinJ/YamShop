@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel='stylesheet' href='/stylesheets/container.css' />
+    <link rel='stylesheet' href='/stylesheets/banner.css' />
+    <link rel='stylesheet' href='/stylesheets/product.css' />
+</head>
+<body>
+<div class="wrap">
+    <% include header_login.ejs %>
+    <div class="container">
+        <div style="padding-bottom: 30px">
+            <div class="index_title">
+                CAT BEST 관리
+            </div>
+            <div class="banner_title">
+                PRODUCT 관리
+            </div>
+            <ul>
+                <% for (var i = 0; i < 6; i++ ) {  %>
+                    <li><%= i+1 %>. 상품<%= i+1 %><button>삭제</button></li>
+                <% } %>
+            </ul>
+        </div>
+        <div>
+            <div class="banner_title">상품 추가</div>
+            <div class="add_img">
+                <div class="add_title">상품 이미지</div>
+                <input style="padding-top: 5px" type="file">
+            </div>
+            <div class="add_name">
+                <div class="add_title">상품명</div>
+                <input type="text">
+            </div>
+            <div class="add_price">
+                <div class="add_title">상품 가격</div>
+                <input type="text">
+            </div>
+        </div>
+        <button class="file_btn">상품등록</button>
+    </div>
+</div>
+</body>
+</html>
