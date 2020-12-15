@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%-include('partials/header.ejs');-%>
+    <%-include('../partials/header.ejs');-%>
     <title>Pet Information</title>
     <link rel="stylesheet" href="../stylesheets/petInfo.css">
 </head>
 <body>
 <div id="wrap">
-    <%-include('partials/nav.ejs');-%>
+    <%-include('../partials/nav.ejs');-%>
     <!--카테고리헤더-->
-    <%-include('partials/pick_icon.ejs');-%>
+    <%-include('../partials/pick_icon.ejs');-%>
     <!--pick 아이콘-->
     <div id="container">
-        <%-include('partials/floatbanner.ejs');-%>
+        <%-include('../partials/floatbanner.ejs');-%>
         <div class="petInfo_text">동물 정보 입력</div>
         <div class="petInfo_box">
             <div class="petInfo_item petImage_input">
@@ -30,7 +30,7 @@
             <button type="button" class="petInfo_item register_button">회원가입</button>
         </div>
     </div>
-    <%-include('partials/footer.ejs');-%>
+    <%-include('../partials/footer.ejs');-%>
 </div>
 </body>
 </html>

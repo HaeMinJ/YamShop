@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%-include('partials/header.ejs');-%>
+    <%-include('../partials/header.ejs');-%>
     <title>상품판매 페이지</title>
     <link rel="stylesheet" href="../stylesheets/product.css">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -9,12 +9,12 @@
 </head>
 <body>
 <div id="wrap">
-    <%-include('partials/nav.ejs');-%>
+    <%-include('../partials/nav.ejs');-%>
     <!--헤더-->
-    <%-include('partials/pic_icon.ejs');-%>
+    <%-include('../partials/pick_icon.ejs');-%>
     <!--픽 고정배너-->
     <div id="container">
-        <%-include('partials/floatbanner.ejs');-%>
+        <%-include('../partials/floatbanner.ejs');-%>
         <div class="purchase_product">
             <div class="purchase_category">
                 <div><img src="../images/homeicon.svg" alt="홈아이콘"></div>
@@ -100,7 +100,7 @@
         </div>
     </div>
     <!--        컨테이너 영역-->
-    <%-include('partials/footer.ejs');-%>
+    <%-include('../partials/footer.ejs');-%>
     <!--footer-->
 </div>
 </body>

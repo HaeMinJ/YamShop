@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%-include('partials/header.ejs');-%>
+    <%-include('../partials/header.ejs');-%>
     <title>봄이와 얌</title>
     <link rel="stylesheet" href="../stylesheets/best.css">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -9,11 +9,11 @@
 </head>
 <body>
 <div id="wrap">
-    <%-include('partials/nav.ejs');-%>
-    <%-include('partials/pick_icom.ejs');-%>
+    <%-include('../partials/nav.ejs');-%>
+    <%-include('../partials/pick_icon.ejs');-%>
     <!--pick 아이콘-->
     <div id="container">
-        <%-include('partials/floatbanner.ejs');-%>
+        <%-include('../partials/floatbanner.ejs');-%>
         <div class="tab_menu">
             <ul class="tab_title">
                 <li class="tab_btn current" data-tab="tab-1">DOG</li>
@@ -155,7 +155,7 @@
         </div>
     </div>
     <!--컨테이너 영역-->
-    <%-include('partials/footer')-%>
+    <%-include('../partials/footer')-%>
     <!--footer-->
 </div>
 </body>
