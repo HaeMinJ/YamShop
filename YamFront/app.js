@@ -1,13 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+let indexRouter = require('./routes/index');
+let bestRouter = require('./routes/best');
+let productRouter = require('./routes/product');
+let signatureRouter = require('./routes/signaturepick');
+let policyRouter = require('./routes/policy');
+let petInfoRouter = require('./routes/petinfo');
+let authRouter = require('./routes/auth');
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +25,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/best', bestRouter);
+app.use('/auth', authRouter);
+app.use('/product',productRouter);
+app.use('/signature-pick',signatureRouter);
+app.use('/policy',policyRouter);
+app.use('/pet-info',petInfoRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
