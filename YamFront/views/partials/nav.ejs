@@ -1,3 +1,22 @@
+<script>
+    var categories = [
+        {
+            categorySeq : 1,
+            categoryName : "전체",
+            categoryParent : 1
+        },
+        {
+            categorySeq : 2,
+            categoryName : "강아지",
+            categoryParent : 1
+        },
+        {
+            categorySeq : 3,
+            categoryName : "고양이",
+            categoryParent : 1
+        }
+    ]
+</script>
 <div id="header_wrap">
     <div class="headerContainer">
         <div></div>
@@ -26,6 +45,11 @@
     <div class="headerBanner">
         <div class="categoryWrap">
             <div class="btnAllCategory">전체 카테고리</div>
+                <ul>
+                    <% categories.forEach(category => { %>
+                    <li> <%- include('../partials/navigation', {category: category});%></li>
+                    <% }) %>
+                </ul>
             <ul class="navi_list">
                 <li style="padding-right: 25px">
                     <a href="../html/best.html">베스트</a>

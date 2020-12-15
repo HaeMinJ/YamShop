@@ -68,6 +68,14 @@ button{
     align-items: center;
 }
 
+.btnAllCategory ul{
+    display: none;
+}
+
+.btnAllCategory ul li:hover ul{
+    display: block;
+}
+
 .search_area{
     display: flex;
     align-items: center;
