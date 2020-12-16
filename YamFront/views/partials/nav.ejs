@@ -1,3 +1,20 @@
+<script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+</script>
 <div id="header_wrap">
     <div class="headerContainer">
         <div></div>
@@ -11,14 +28,14 @@
         </h1>
         <div class="navi">
             <ul class="navi_list">
-                <li style="padding-right: 25px">
-                    <a href="../html/join.html">회원가입</a>
-                    /
-                    <a href="../html/login.html">로그인</a>
-                </li>
-                <li>
-                    <a href="#">장바구니</a>
-                </li>
+                    <li style="padding-right: 25px" id="non-login">
+                        <a href="../html/join.html">회원가입</a>
+                        /
+                        <a href="../html/login.html">로그인</a>
+                    </li>
+                    <li>
+                        <a href="#" id="login">장바구니</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -51,3 +68,14 @@
     <!--카테고리헤더-->
 </div>
 <!--헤더-->
+<script>
+    let nonLogin = document.getElementById('non-login')
+    let login = document.getElementById('login')
+    if(getCookie('accessToken')){
+        nonLogin.style.display = "none";
+        login.style.display = 'inline-block';
+    }else{
+        nonLogin.style.display = "inline-block";
+        login.style.display = 'none';
+    }
+</script>

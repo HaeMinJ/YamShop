@@ -8,15 +8,17 @@
 <body>
 <div id="wrap">
     <%-include('../partials/nav.ejs' , {categories : categories});-%>
-    <%-include('partials/pick_icon,ejs');-%>
+    <%-include('../partials/pick_icon.ejs');-%>
     <!--pick 아이콘-->
     <div id="container">
         <div class="login_text">LOGIN</div>
         <div class="login_box">
             <div class="item login_txt">회원 로그인</div>
-            <input type="text" class="item id_box" onfocus="this.value=''" value="아이디(이메일)"></input>
-            <input type="text" class="item pwd_box" onfocus="this.value=''" value="비밀번호"></input>
-            <button type="button" class="item log_box">로그인</button>
+            <form action="/auth/signin" method="post">
+            <input type="text" class="item id_box" name="email" placeholder="아이디(이메일)"></input>
+            <input type="text" class="item pwd_box" name="pw" placeholder="비밀번호"></input>
+            <button type="submit" class="item log_box">로그인</button>
+            </form>
             <label>
                 <input type="checkbox" class="item2 loginCheck_txt">아이디 저장</input>
             </label>

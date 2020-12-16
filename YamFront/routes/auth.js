@@ -28,7 +28,6 @@ router.post('/signup', async function(req, res){
     })
     if(register.status === 200){
         register = await register.json()
-
         res.cookie('accessToken', register.accessToken)
         res.redirect('/auth/signin')
     }else{
@@ -42,5 +41,26 @@ router.get('/signin', async function(req, res, next) {
     categories = await categories.json()
     res.render('pages/signin', { title: 'Express', categories });
 });
+
+router.post('/signin', async function(req, res){
+    let {email, pw} = req.body;
+    let result = await fetch('https://api.bomandyam.shop:3000/user/signin', {
+        method : 'POST',
+        headers : {
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify({
+            email,
+            pw
+        })
+    })
+    if(result.status === 200){
+        result = await result.json()
+        res.cookie('accessToken', result.accessToken)
+        res.redirect('/')
+    }else{
+        res.redirect('/auth/signin')
+    }
+})
 
 module.exports = router;
