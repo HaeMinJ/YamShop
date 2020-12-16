@@ -116,8 +116,17 @@ router.delete('/:categorySeq', async (req, res, next) => {
 router.get('/:categorySeq', async (req, res, next) => {
     const {categorySeq} = req.params
     try {
-        const data = await pool.query('select * from ProdCategory where categorySeq = ?', [categorySeq])
-        return res.json(data[0][0])
+        let allCategory = []
+        let currentCategory = await pool.query('select * from ProdCategory where categorySeq = ?', [categorySeq])
+        currentCategory = currentCategory[0][0]
+        allCategory.push(currentCategory);
+        while(currentCategory.categorySeq !== 1){
+            let parent = await pool.query('select * from ProdCategory where categorySeq = ?',currentCategory.parentCategory);
+            parent = parent[0][0]
+            allCategory.push(parent)
+            currentCategory = parent
+        }
+        return res.json(allCategory)
     } catch (err) {
         return res.status(500).json(err)
     }

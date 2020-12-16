@@ -72,8 +72,16 @@ button{
     display: none;
 }
 
-.btnAllCategory ul li:hover ul{
+.btnAllCategory:hover ul{
     display: block;
+    position: absolute;
+    z-index: 14;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+}
+.btnAllCategory:hover li{
+    width:210px;
+    display: inline-block;
 }
 
 .search_area{
