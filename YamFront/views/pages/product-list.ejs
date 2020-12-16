@@ -21,17 +21,17 @@
             <% currentCategories.reverse()%>
         </ul>
         <div class="cate_nav">
-            <button class="cate_dog">강아지</button>
-            <button class="cate_cat">고양이</button>
+            <a href="/product/2"> <button class="cate_dog">강아지</button></a>
+            <a href="/product/3"> <button class="cate_cat">고양이</button></a>
         </div>
     </div>
     <div class="cateItem2">
-        <div class="cate_text"><%= currentCategories[0].categoryName+" 카테고리에 상품이 "+products.pnTotal.toLocaleString()+"개 있습니다."%></div>
+        <div class="cate_text"><%= currentCategories[0].categoryName+" 카테고리에 상품이 "+products.totalCount.toLocaleString()+"개 있습니다."%></div>
         <div class="cate_sort">
             <ul>
-                <li>인기순</li>
-                <li>낮은 가격순</li>
-                <li>높은 가격순</li>
+                <a href=""><li>인기순</li></a>
+                <a href=""><li>낮은 가격순</li></a>
+                <a href=""><li>높은 가격순</li></a>
             </ul>
         </div>
 

@@ -49,7 +49,7 @@ router.get('/', async (req, res, next) => {
         const pnTotal = Math.ceil(totalCount / size);
         const pnStart = ((Math.ceil(page / pnSize) - 1) * pnSize) + 1;
         let pnEnd = (pnStart + pnSize) - 1;
-        const data = await pool.query('select * from Product order by '+order+ 'limit ?, ?', [skipSize, size])
+        const data = await pool.query('select * from Product order by '+order+ ' limit ?, ?', [skipSize, size])
         const result = {
             page,
             pnStart,
