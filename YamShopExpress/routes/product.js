@@ -13,12 +13,26 @@ const pool = require('../utils/pool')
  */
 
 router.get('/', async (req, res, next) => {
-    let { page, size, categorySeq } = req.query
+    let { page, size, categorySeq, order } = req.query
+    order = Number(order) || 1;
     categorySeq = Number(categorySeq) || 1;
     size = Number(size) || 15;
     page = Number(page) || 1;
     const pnSize = 10;
     const skipSize = (page - 1) * size;
+    switch(order){
+        case 1:
+            order = 'views DESC'
+            break;
+        case 2:
+            order = 'price ASC'
+            break;
+        case 3:
+            order = 'price DESC'
+            break;
+        default:
+            order = 'views'
+    }
     try {
         let categoryData;
         if(categorySeq !== 1) {
@@ -35,12 +49,13 @@ router.get('/', async (req, res, next) => {
         const pnTotal = Math.ceil(totalCount / size);
         const pnStart = ((Math.ceil(page / pnSize) - 1) * pnSize) + 1;
         let pnEnd = (pnStart + pnSize) - 1;
-        const data = await pool.query('select * from Product order by prodSeq desc limit ?, ?', [skipSize, size])
+        const data = await pool.query('select * from Product order by '+order+ 'limit ?, ?', [skipSize, size])
         const result = {
             page,
             pnStart,
             pnEnd,
             pnTotal,
+            totalCount,
             contents: data[0]
         }
         return res.json(result)
@@ -63,6 +78,7 @@ router.get('/:prodSeq', async (req, res, next) => {
     const { prodSeq } = req.params
     try {
         const data = await pool.query('select * from Product where prodSeq = ?', [Number(prodSeq)])
+        await pool.query('UPDATE Product SET views = views+1 WHERE prodSeq = ?',[Number(prodSeq)])
         return res.json(data[0][0])
     } catch (err) {
         return res.status(500).json(err)

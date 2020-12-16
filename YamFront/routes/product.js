@@ -5,13 +5,13 @@ let router = express.Router();
 router.get('/', async function(req, res, next) {
     let page = Number(req.query.page) || 1;
     let categorySeq = Number(req.query.categorySeq) || 1;
-    let result = await fetch('https://api.bomandyam.shop:3000/product?page='+page+'&size=15&categorySeq='+categorySeq)
-    let products = await result.json()
+    let products = await fetch('https://api.bomandyam.shop:3000/product?page='+page+'&size=15&categorySeq='+categorySeq)
     let categories = await fetch('https://api.bomandyam.shop:3000/category')
-    let currentCategoryInfo = await fetch('https://api.bomandyam.shop:3000/category/'+categorySeq)
+    let currentCategories = await fetch('https://api.bomandyam.shop:3000/category/'+categorySeq)
+    products = await products.json()
     categories = await categories.json()
-    currentCategoryInfo = await currentCategoryInfo.json()
-    res.render('pages/product-list', { products: products, categories: categories, categoryInfo: currentCategoryInfo });
+    currentCategories= await currentCategories.json()
+    res.render('pages/product-list', { products: products, categories: categories, currentCategories: currentCategories });
 });
 
 /* GET home page. */
