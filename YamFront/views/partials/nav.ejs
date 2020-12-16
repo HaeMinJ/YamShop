@@ -28,7 +28,7 @@
             <div class="btnAllCategory">전체 카테고리
                 <ul>
                     <% categories.forEach(category => { %>
-                    <li> <%- include('../partials/navigation', {category: category}); -%></li>
+                        <li> <%- include('../partials/navigation', {category: category}); -%></li>
                     <% }) %>
                 </ul>
             </div>
@@ -42,10 +42,10 @@
             </ul>
         </div>
         <div class="search_area">
-            <input type="text" id="search_form" name="keyword" class="search_text">
-            <a href="#" class="search_img">
-                <img src="../images/search.svg" alt="메인페이지 로고">
-            </a>
+            <form action="/product">
+                <input type="text" id="search_form" name="query" class="search_text">
+                <input type="submit" class="search_img" src="images/search.svg">
+            </form>
         </div>
     </div>
     <!--카테고리헤더-->

@@ -5,7 +5,7 @@ let router = express.Router();
 router.get('/', async function(req, res, next) {
   let categories = await fetch('https://api.bomandyam.shop:3000/category')
   categories = await categories.json()
-  res.render('index', { categories: categories});
+  res.render('index', {categories});
 });
 
 module.exports = router;

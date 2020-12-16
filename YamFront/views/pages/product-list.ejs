@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html>
+<script>
+    function insertParam(key, value) {
+        key = encodeURIComponent(key);
+        value = encodeURIComponent(value);
+
+        // kvp looks like ['key1=value1', 'key2=value2', ...]
+        var kvp = document.location.search.substr(1).split('&');
+        let i = 0;
+
+        for (; i < kvp.length; i++) {
+            if (kvp[i].startsWith(key + '=')) {
+                let pair = kvp[i].split('=');
+                pair[1] = value;
+                kvp[i] = pair.join('=');
+                break;
+            }
+        }
+
+        if (i >= kvp.length) {
+            kvp[kvp.length] = [key, value].join('=');
+        }
+
+        // can return this or...
+        let params = kvp.join('&');
+
+        // reload page with new params
+        document.location.search = params;
+    }
+</script>
 <head>
     <title>category</title>
     <link rel="stylesheet" href="../stylesheets/category.css">
-    <%-include('../partials/header.ejs');-%>
+    <%- include('../partials/header.ejs'); -%>
 <body>
 <div id="wrap">
-    <%-include('../partials/nav.ejs');-%>
+    <%- include('../partials/nav.ejs' , {categories : categories}); -%>
 </div>
-<%-include('../partials/pick_icon.ejs');-%>
+<%- include('../partials/pick_icon.ejs'); -%>
 <!--픽 고정배너-->
 <div id="C_container">
     <div class="cateItem1">
         <ul class="cate_inav">
-            <li><a href="#"><img src="../images/home.svg" alt="홈 로고"></a></li> >
-            <% currentCategories.reverse()%>
-            <% currentCategories.forEach( category => {%>
-            <li><a href=<%='/product?categorySeq='+category.categorySeq%>><%= category.categoryName %></a></li>
-            <% });%>
-            <% currentCategories.reverse()%>
+            <li><a href="#"><img src="../images/home.svg" alt="홈 로고"></a></li>
+            >
+            <% currentCategories.reverse() %>
+            <% currentCategories.forEach( category => { %>
+            <li><a href=<%= '/product?categorySeq='+category.categorySeq %>><%= category.categoryName %></a></li>
+            <% }); %>
+            <% currentCategories.reverse() %>
         </ul>
         <div class="cate_nav">
-            <a href="/product/2"> <button class="cate_dog">강아지</button></a>
-            <a href="/product/3"> <button class="cate_cat">고양이</button></a>
+            <a href="/product?categorySeq=2">
+                <button class="cate_dog">강아지</button>
+            </a>
+            <a href="/product?categorySeq=3">
+                <button class="cate_cat">고양이</button>
+            </a>
         </div>
     </div>
     <div class="cateItem2">
-        <div class="cate_text"><%= currentCategories[0].categoryName+" 카테고리에 상품이 "+products.totalCount.toLocaleString()+"개 있습니다."%></div>
+        <% if(!query){ %>
+            <div class="cate_text"><%= currentCategories[0].categoryName + " 카테고리에 상품이 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
+        <% }else{ %>
+            <div class="cate_text"><%= '"'+query+'"' + "에 대한 검색 결과가 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
+        <% } %>
         <div class="cate_sort">
             <ul>
-                <a href=""><li>인기순</li></a>
-                <a href=""><li>낮은 가격순</li></a>
-                <a href=""><li>높은 가격순</li></a>
+                <li>
+                    <button onclick="insertParam('order',1)">인기순</button>
+                </li>
+                <li>
+                    <button onclick="insertParam('order',2)">낮은 가격순</button>
+                </li>
+                <li>
+                    <button onclick="insertParam('order',3)">높은 가격순</button>
+                </li>
             </ul>
         </div>
 
         <ul class="cate_ani_best">
             <% if (products.contents.length != 0) { %>
                 <% products.contents.forEach(function(product){ %>
-                    <li> <%- include('../partials/product', {product: product});%></li>
+                    <li> <%- include('../partials/product', {product: product}); %></li>
                 <% }); %>
             <% } else { %>
                 <tr>
@@ -49,7 +93,7 @@
 
     </div>
 </div>
-<%-include('../partials/pagination', {products: products});-%>
-<%-include('../partials/footer.ejs');-%>
+<%- include('../partials/pagination', {products: products}); -%>
+<%- include('../partials/footer.ejs'); -%>
 </body>
 </html>

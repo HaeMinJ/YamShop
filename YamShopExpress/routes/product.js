@@ -13,11 +13,12 @@ const pool = require('../utils/pool')
  */
 
 router.get('/', async (req, res, next) => {
-    let { page, size, categorySeq, order } = req.query
+    let { page, size, categorySeq, order, query } = req.query
     order = Number(order) || 1;
     categorySeq = Number(categorySeq) || 1;
     size = Number(size) || 15;
     page = Number(page) || 1;
+    query = query || '';
     const pnSize = 10;
     const skipSize = (page - 1) * size;
     switch(order){
@@ -44,12 +45,20 @@ router.get('/', async (req, res, next) => {
         for(category of categoryData[0]){
             needCategories.push(category.categorySeq);
         }
-        const queryResult = await pool.query('SELECT count(*) as count FROM Product WHERE categorySeq IN (?)',[needCategories]);
+        let queryResult;
+        if(query !== '')
+            queryResult = await pool.query('SELECT count(*) as count FROM Product WHERE categorySeq IN (?) '+'and name like' +"'%"+query+"%'",[needCategories]);
+        else
+            queryResult = await pool.query('SELECT count(*) as count FROM Product WHERE categorySeq IN (?)',[needCategories]);
         const totalCount = Number(queryResult[0][0].count);
         const pnTotal = Math.ceil(totalCount / size);
         const pnStart = ((Math.ceil(page / pnSize) - 1) * pnSize) + 1;
         let pnEnd = (pnStart + pnSize) - 1;
-        const data = await pool.query('select * from Product order by '+order+ ' limit ?, ?', [skipSize, size])
+        let data;
+        if(query !== '')
+            data = await pool.query('select * from Product '+"where name like '%"+query+"%'"+'order by '+order+ ' limit ?, ?', [skipSize, size])
+        else
+            data = await pool.query('select * from Product '+'order by '+order+ ' limit ?, ?', [skipSize, size])
         const result = {
             page,
             pnStart,
