@@ -3,34 +3,36 @@
 <head>
     <title>join</title>
     <link rel="stylesheet" href="../stylesheets/login.css">
-    <%-include('../partials/header.ejs');-%>
+    <%- include('../partials/header.ejs'); -%>
 </head>
 <body>
 <div id="wrap">
-    <%-include('../partials/nav.ejs' , {categories : categories});-%>
-    <%-include('../partials/pick_icon.ejs');-%>
+    <%- include('../partials/nav.ejs' , {categories : categories}); -%>
+    <%- include('../partials/pick_icon.ejs'); -%>
     <!--pick 아이콘-->
     <div id="container">
         <div class="join_text">회원가입</div>
         <div class="join_box">
-            <input type="text" onfocus="this.value=''" class="join_item id_input" value="*아이디(이메일 형식)"></input>
-            <input type="text" onfocus="this.value=''" class="join_item pwd_input" value="*비밀번호"></input>
-            <input type="text" onfocus="this.value=''" class="join_item pwd2_input" value="*비밀번호 확인"></input>
-            <input type="text" onfocus="this.value=''" class="join_item name_input" value="*이름"></input>
-            <input type="text" onfocus="this.value=''" class="join_item phone_input" value="*전화번호"></input>
-            <input type="text" onfocus="this.value=''" class="join_item address_input" value="*주소"></input>
+            <form action="/auth/signup" method="post">
+            <input type="text" name="email" class="join_item id_input" placeholder="*아이디(이메일 형식)">
+            <input type="text" name="pw" class="join_item pwd_input" placeholder="*비밀번호">
+            <input type="text" name="pwRe" class="join_item pwd2_input" placeholder="*비밀번호 확인">
+            <input type="text" name="name" class="join_item name_input" placeholder="*이름">
+            <input type="text" name="phone" class="join_item phone_input" placeholder="*전화번호">
+            <input type="text" name="address" class="join_item address_input" placeholder="*주소">
             <div class="join_item input_text">성별
-                <label><input type="radio" class="genderCheck_txt" name="gender" value="F">여자</input></label>
-                <label><input type="radio" class="genderCheck_txt" name="gender" value="M">남자</input></label>
+                <label><input type="radio" class="genderCheck_txt" name="gender" value="1">여자</label>
+                <label><input type="radio" class="genderCheck_txt" name="gender" value="0">남자</label>
             </div>
             <div class="join_item input_text">
                 생년월일&nbsp;&nbsp;
-                <input type="date" class="">
+                <input type="text" name="birthday" class="" placeholder="2000.12.12">
             </div>
-            <button type="button" class="item jn_box">회원가입</button>
+            <input type="submit" class="item jn_box" text="회원가입">
+            </form>
         </div>
     </div>
-    <%-include('../partials/footer.ejs');-%>
+    <%- include('../partials/footer.ejs'); -%>
 </div>
 </body>
 </html>
