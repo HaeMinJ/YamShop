@@ -15,9 +15,8 @@ const pool = require('../utils/pool')
  */
 
 router.get('/', async (req, res, next) => {
-    const {page, size} = req.query
     try {
-        const data = await pool.query('select * from ProdCategory limit ?, ?', [Number(page), Number(size)])
+        const data = await pool.query('select * from ProdCategory', [])
         return res.json(data[0])
     } catch (err) {
         return res.status(500).json(err)

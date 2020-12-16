@@ -3,8 +3,10 @@ let router = express.Router();
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-    let result = await fetch('https://api.bomandyam.shop:3000/product?page=0&size=20')
+    let page = Number(req.query.page)||1;
+    let result = await fetch('https://api.bomandyam.shop:3000/product?page='+page+'&size=15')
     let products = await result.json()
+
     res.render('pages/product-list', { products: products });
 });
 
