@@ -13,11 +13,11 @@
     padding: 40px 0 40px 0;
 }
 
-ol{
+ul{
     padding-left: 0;
 }
 
-ol li{
+ul li{
     font-weight: bolder;
     font-size: 30px;
     color: #6F6F6F;
