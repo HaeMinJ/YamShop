@@ -132,6 +132,31 @@ router.post('/', async (req, res, next) => {
     }
 })
 
+/**
+ * @api {patch} /product/signaturepick/:prodSeq Add To Signature Pick
+ * @apiName Signature Pick
+ * @apiGroup Product
+ *
+ * @apiParam {Number} prodSeq
+ * @apiParam {String} who bom : 봄이 yam : 얌이
+ * @apiParam {Number} isChecked 0: false 1: true
+ */
+
+router.patch('/signaturepick/:prodSeq', async (req, res, next) =>{
+    const { who, isChecked } = req.body;
+    const {prodSeq} = req.params;
+    if(req.userInfo && req.userInfo.typeSeq === 1){
+        if(who === 'bom'){
+            let result = await pool.query("update Product SET bomspick = ? where prodSeq = ?",[isChecked, prodSeq])
+            res.status(200).send("")
+        }else if(who === 'yam'){
+            let result = await pool.query("update Product SET yamspick = ? where prodSeq = ?", [isChecked, prodSeq])
+            res.status(200).send("")
+        }
+    }else{
+        res.status(403).send("")
+    }
+})
 
 
 /**

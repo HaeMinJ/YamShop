@@ -1005,6 +1005,43 @@
     "groupTitle": "Product"
   },
   {
+    "type": "patch",
+    "url": "/product/signaturepick/:prodSeq",
+    "title": "Add To Signature Pick",
+    "name": "Signature_Pick",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "prodSeq",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "who",
+            "description": "<p>bom : 봄이 yam : 얌이</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "isChecked",
+            "description": "<p>0: false 1: true</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
     "type": "get",
     "url": "/user/token-verification",
     "title": "Check accessToken",
