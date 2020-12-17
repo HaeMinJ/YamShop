@@ -95,6 +95,25 @@ router.get('/:prodSeq', async (req, res, next) => {
 })
 
 /**
+ * @api {delete} /product/:prodSeq DELETE ProductInfo
+ * @apiName GetProductInfo
+ * @apiGroup Product
+ *
+ * @apiParam {Int} prodSeq
+ *
+ */
+
+router.delete('/:prodSeq', async (req, res, next) => {
+    const { prodSeq } = req.params
+    try {
+        const data = await pool.query('delete from Product where prodSeq = ?', [Number(prodSeq)])
+        return res.json(data[0][0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
+
+/**
  * @api {post} /product Add Product
  * @apiName Product Post For Crawler
  * @apiGroup Product
