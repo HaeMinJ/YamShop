@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+    <link rel="stylesheet" href="../stylesheets/login.css">
+    <%-include('../partials/header.ejs');-%>
+</head>
+<body>
+<div id="wrap">
+    <!--pick 아이콘-->
+    <div id="container">
+        <div class="login_text">비밀번호 재설정</div>
+        <div class="login_box">
+            <div class="item login_txt">비밀번호 재설정</div>
+            <form action=<%="/auth/reset/"+token %> method="post">
+                <input type="text" class="item id_box" name="pw" placeholder="비밀번호">
+                <input type="text" class="item pwd_box" name="pwRe" placeholder="비밀번호 확인">
+                <button type="submit" class="item log_box">재설정</button>
+            </form>
+            <label>
+                <input type="checkbox" class="item2 loginCheck_txt">아이디 저장
+            </label>
+        </div>
+    </div>
+    <%-include('../partials/footer.ejs');-%>
+</div>
+</body>
+</html>

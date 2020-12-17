@@ -63,4 +63,28 @@ router.post('/signin', async function(req, res){
     }
 })
 
+router.get('/reset/:token', async function(req, res) {
+    let token = req.params.token;
+    res.render('pages/pw-reset', {token : token});
+})
+router.post('/reset/:token', async function (req, res) {
+    let token = req.params.token;
+    let pw = req.body.pw;
+    let pwResult = await fetch('https://api.bomandyam.shop:3000/user/reset', {
+        method : 'post',
+        headers : {
+            'x-access-token' : token,
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify({
+            pw : pw
+        })
+    })
+    if(pwResult.status === 200){
+        res.redirect('/auth/signin')
+    }else{
+        res.redirect('/auth/signup')
+    }
+})
+
 module.exports = router;
