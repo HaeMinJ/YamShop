@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
+    <title></title>
     <link rel='stylesheet' href='/stylesheets/index.css' />
     <link rel='stylesheet' href='/stylesheets/header.css' />
-
+    <script>
+        let token = <%= token %>
+        if(!token){
+            location.href = '/login'
+        }
+    </script>
 </head>
 <body>
     <div class="wrap">
-        <% include header_login.ejs%>
+        <%- include partials/header_login.ejs -%>
         <div class="container">
             <a href="/banner">1. 메인 배너 관리</a><br>
             <a href="/bomspick">2. BOM's pick 관리</a><br>

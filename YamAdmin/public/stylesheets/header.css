@@ -10,6 +10,11 @@
     font-weight: bolder;
 }
 
+a{
+    text-decoration: none;
+    color: #6F6F6F;
+}
+
 .head{
     width: 800px;
     display: flex;
@@ -19,6 +24,12 @@
 
 .logout_btn{
     font-size: 18px;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
     float: left;
     color: #ffcb12;
+    border: none;
+    background: #ffeaa1;
+    cursor: pointer;
 }

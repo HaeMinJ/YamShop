@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BOM's pick</title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/header.css' />
     <link rel='stylesheet' href='/stylesheets/container.css' />
     <link rel='stylesheet' href='/stylesheets/banner.css' />
@@ -9,33 +9,33 @@
 </head>
 <body>
 <div class="wrap">
-    <% include header_login.ejs %>
+    <%- include ../partials/header_login.ejs -%>
     <div class="container">
         <div style="padding-bottom: 30px">
             <div class="index_title">
-                BOM's pick 관리
+                KNOWHOW 관리
             </div>
             <div class="banner_title">
-                PRODUCT 관리
+                노하우 목록
             </div>
-            <ol>
-                <% products.forEach(product => { %>
-                    <li><%= product.name %><button>삭제</button></li>
-                <% }) %>
-            </ol>
+            <ul>
+                <% for (var i = 0; i < 6; i++ ) {  %>
+                    <li><%= i+1 %>. 상품<%= i+1 %><button>삭제</button></li>
+                <% } %>
+            </ul>
         </div>
         <div>
-            <div class="banner_title">상품 추가</div>
+            <div class="banner_title">노하우 추가</div>
             <div class="add_img">
-                <div class="add_title">상품 이미지</div>
+                <div class="add_title">노하우 이미지</div>
                 <input style="padding-top: 5px" type="file">
             </div>
             <div class="add_name">
-                <div class="add_title">상품명</div>
+                <div class="add_title">노하우 제목</div>
                 <input type="text">
             </div>
             <div class="add_price">
-                <div class="add_title">상품 가격</div>
+                <div class="add_title">노하우 설명</div>
                 <input type="text">
             </div>
         </div>

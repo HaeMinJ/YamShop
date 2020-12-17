@@ -3,7 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Index Page' });
+    token = req.cookies['accessToken'];
+    if(token){
+        res.render('index', { title: 'Index Page' });
+    }else{
+        res.redirect('/login')
+    }
+
 });
 
 module.exports = router;

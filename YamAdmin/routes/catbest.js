@@ -7,7 +7,7 @@ router.get('/', async function(req, res, next) {
     let result = await fetch('https://api.bomandyam.shop:3000/product?page=0&size=30')
     let products = await result.json()
     console.log(products)
-    res.render('catbest', { products: products });
+    res.render('pages/catbest', { products: products });
 });
 
 module.exports = router;
