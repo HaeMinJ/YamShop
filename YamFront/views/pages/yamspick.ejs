@@ -15,7 +15,7 @@
         <%-include('../partials/floatbanner.ejs');-%>
         <div class="pick">
             <div class="profile_title">
-                BOM's pick
+                YAM's pick
             </div>
             <div class="profile">
                 <div class="profile_img">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="pick_product">
-                <% products.forEach(product => { %>
+                <% products.contents.forEach(product => { %>
                     <li> <%- include('../partials/product', {product: product});%></li>
                 <% }) %>
             </div>
