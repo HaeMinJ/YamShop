@@ -68,7 +68,7 @@ router.get('/request-reset', async(req, res) => {
 })
 router.post('/request-reset', async (req, res) =>{
     let email = req.body.email
-    await fetch("https://api.bomandyam.shop:3000/user/forgot", {
+    let result = await fetch("https://api.bomandyam.shop:3000/user/forgot", {
         method : 'post',
         headers : {
             'Content-type' : 'application/json'
@@ -77,6 +77,7 @@ router.post('/request-reset', async (req, res) =>{
             email : email
         })
     })
+    console.log(result);
     res.redirect('/')
 })
 
