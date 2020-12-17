@@ -3,6 +3,8 @@ let router = express.Router()
 const pool = require('../utils/pool')
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto-promise');
+const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
 
 
 
@@ -221,6 +223,60 @@ router.get('/:userSeq', async (req, res, next) => {
     }
   }else{
     res.status(403).send({"message" : "Token error!"});
+  }
+})
+
+router.post('/reset', async(req, res, next) =>{
+  if(req.userInfo) {
+    let {pw} = req.body;
+    let cryptPw = await crypPw(pw);
+    const salt = cryptPw[0];
+    const newPw = cryptPw[1];
+    let result = await pool.query('UPDATE User SET pw = ?, salt = ? where userSeq =?', [newPw, salt, req.userInfo.userSeq])
+    res.status(200).send("비밀번호 변경이 성공적으로 완료되었습니다.");
+  }else{
+    res.status(403).send("토큰 오류입니다.");
+  }
+})
+
+router.post('/forgot', async(req, res, next) => {
+  let { email } = req.body;
+  console.log(email)
+  try{
+    let token = await pool.query('select accessToken from User where email = ?', [email]);
+    token = token[0][0];
+    if(token){
+      let smtpTransport = nodemailer.createTransport({
+        service : 'SendGrid',
+        auth: {
+          user: 'apikey',
+          pass: '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'
+        }
+      });
+      let mailOptions = {
+        to: email,
+        from: 'reset-password@bomandyam.shop',
+        subject: '[중요]봄이와 얌 비밀번호 재설정 안내 메일입니다.',
+        text: '누군가의 요청에 의해 비밀번호 재설정 안내 메일을 보내드립니다.' +
+            '\n본인이 요청한 것이 맞다면 아래 링크를 통해 비밀번호를 재설정 해주세요.' +
+            '\n https://www.bomandyam.shop/auth/reset/'+token.accessToken+' \n\n'+
+            '만약 본인이 요청한 것이 아니거나 비밀번호 재설정을 원치 않으시는 경우' +
+            '메일을 무시해주세요. \n 재설정 없이 비밀번호가 유지됩니다.'
+      }
+      smtpTransport.sendMail(mailOptions, function (errorMessage) {
+        if(errorMessage) {
+          console.log(errorMessage);
+          res.status(500).send("메일 전송에 실패했습니다.");
+        }else {
+          res.status(200).send('비밀번호 재설정 이메일이 성공적으로 전송되었습니다.')
+        }
+      })
+    }else{
+      res.status(403).send('일치하는 이메일 주소가 없습니다.')
+    }
+  }catch (e) {
+    console.log(e)
+    res.status(500).send('')
   }
 })
 
