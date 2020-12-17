@@ -60,7 +60,7 @@
                 <i class="material-icons">chevron_left</i>
             </button>
         </li>
-        <% for(var i = products.pnStart; i <= products.pnEnd; i++){ %>
+        <% for(var i = products.pnStart; i <= products.pnEnd && i <= products.pnTotal; i++){ %>
         <li
         <% if(i === products.page){ %> class="active"
                 <% } %>
@@ -75,7 +75,7 @@
         >
             <button
                     <% if(products.page < products.pnTotal){ %>
-                    onclick="insertParam('page',<%= i %>)"
+                    onclick="insertParam('page',<%= i <= products.pnTotal? i : products.pnTotal %>)"
                     <% } %>
                     class="waves-effect">
                 <i class="material-icons">chevron_right</i>
