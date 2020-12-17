@@ -43,10 +43,9 @@
     <div class="cateItem1">
         <ul class="cate_inav">
             <li><a href="#"><img src="../images/home.svg" alt="홈 로고"></a></li>
-            >
             <% currentCategories.reverse() %>
             <% currentCategories.forEach( category => { %>
-                <li><a href=<%= '/product?categorySeq=' + category.categorySeq %>><%= category.categoryName %> </a></li>
+                <li><a href=<%= '/product?categorySeq=' + category.categorySeq %>> > <%= category.categoryName %>  </a></li>
             <% }); %>
             <% currentCategories.reverse() %>
         </ul>
