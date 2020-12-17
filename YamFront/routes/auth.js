@@ -63,6 +63,10 @@ router.post('/signin', async function(req, res){
     }
 })
 
+router.get('/request-reset', async(req, res) => {
+    res.render('pages/request-reset')
+})
+
 router.get('/reset/:token', async function(req, res) {
     let token = req.params.token;
     res.render('pages/pw-reset', {token : token});
