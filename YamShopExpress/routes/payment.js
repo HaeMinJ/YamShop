@@ -70,6 +70,25 @@ router.post('/', async (req, res, next) => {
     const { paymentSeq, purchaseInfo } = req.body;
     if(userInfo){
         try{
+            let smtpTransport = nodemailer.createTransport({
+                service : 'SendGrid',
+                auth: {
+                    user: 'apikey',
+                    pass: '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'
+                }
+            });
+            let mailOptions = {
+                to: email,
+                from: 'payment@bomandyam.shop',
+                subject: '['+paymentSeq+'] 봄이와 얌 결제 영수증입니다.',
+                text: '구매 해주셔서 감사합니다. 상품이 배송되기 까지는 택배사 사정에 따라 3~5일 가량 소요됩니다. ' +
+                    '상품 교환 및 환불 관련 문의 사항이 있다면 아래의 번호로 연락주시기 바랍니다.' +
+                    'H.P : 010-9881-0664 ' +
+                    '' +
+                    '봄이와 얌 쇼핑몰 : https://www.bomandyam.shop/' +
+                    '결제 시간 : ' + new Date()
+            }
+            smtpTransport.sendMail(mailOptions, function (errorMessage){})
             const result = await pool.query('update Payment set payState = 1, purchaseInfo= ?, purchaseTime = ? WHERE paymentSeq = ?', [purchaseInfo, Date.now(), paymentSeq])
             res.status(200).send(result[0])
         }catch (e) {
