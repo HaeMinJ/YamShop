@@ -32,10 +32,13 @@ button{
 
 .logo{
     display: flex;
-    padding-left: 220px;
+    justify-content: center;
+    position: absolute;
+    padding-left: 390px;
 }
 
 .logo_text{
+    display: inline-flex;
     font-family: "MS Reference Sans Serif";
     font-style: normal;
     color: #6F6F6F;
@@ -78,8 +81,7 @@ button{
     top:130px;
     margin-right: 140px;
     z-index: 14;
-    background-color: rgba(0,0,0,0.5);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
 
 }
 .btnAllCategory:hover ul li{
@@ -89,6 +91,7 @@ button{
 }
 .category_text{
     color: white;
+    text-shadow: #6F6F6F;
 }
 
 .search_area{
@@ -209,7 +212,7 @@ input.search_img{
 /*컨테이너 css*/
 
 .paging_text{
-    font-size:  18px;
+    font-size:  22px;
     font-weight: bolder;
     color: #404040;
 }
@@ -222,13 +225,14 @@ input.search_img{
     align-items: center;
     width: 100%;
     background-color: #404040;
-    margin : 0;
+    margin-top: 100px;
 }
 
 .top_footer{
     width: 100%;
     height: 30px;
     background-color: #FFCB12;
+
 }
 
 .bottom_footer{
