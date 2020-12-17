@@ -13,6 +13,7 @@ router.get('/', async function(req, res, next) {
     products = await products.json()
     categories = await categories.json()
     currentCategories= await currentCategories.json()
+    console.log(products)
     if(query === '')
         res.render('pages/product-list', { products, categories, currentCategories, query: '' });
     else
