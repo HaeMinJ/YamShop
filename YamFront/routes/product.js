@@ -14,7 +14,7 @@ router.get('/', async function(req, res, next) {
     categories = await categories.json()
     currentCategories= await currentCategories.json()
     if(query === '')
-        res.render('pages/product-list', { products, categories, currentCategories });
+        res.render('pages/product-list', { products, categories, currentCategories, query: '' });
     else
         res.render('pages/product-list', { products, categories, currentCategories, query });
 });

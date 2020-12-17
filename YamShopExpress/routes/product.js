@@ -56,9 +56,9 @@ router.get('/', async (req, res, next) => {
         let pnEnd = (pnStart + pnSize) - 1;
         let data;
         if(query !== '')
-            data = await pool.query('select * from Product '+"where name like '%"+query+"%'"+'order by '+order+ ' limit ?, ?', [skipSize, size])
+            data = await pool.query('select * from Product where categorySeq IN (?)'+" name like '%"+query+"%'"+'order by '+order+ ' limit ?, ?', [needCategories, skipSize, size])
         else
-            data = await pool.query('select * from Product '+'order by '+order+ ' limit ?, ?', [skipSize, size])
+            data = await pool.query('select * from Product where categorySeq IN (?)'+' order by '+order+ ' limit ?, ?', [needCategories,skipSize, size])
         const result = {
             page,
             pnStart,

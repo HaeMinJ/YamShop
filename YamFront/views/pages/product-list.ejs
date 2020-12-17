@@ -46,7 +46,7 @@
             >
             <% currentCategories.reverse() %>
             <% currentCategories.forEach( category => { %>
-            <li><a href=<%= '/product?categorySeq='+category.categorySeq %>><%= category.categoryName %></a></li>
+                <li><a href=<%= '/product?categorySeq=' + category.categorySeq %>><%= category.categoryName %></a></li>
             <% }); %>
             <% currentCategories.reverse() %>
         </ul>
@@ -60,10 +60,10 @@
         </div>
     </div>
     <div class="cateItem2">
-        <% if(!query){ %>
-            <div class="cate_text"><%= currentCategories[0].categoryName + " 카테고리에 상품이 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
+        <% if(query){ %>
+            <div class="cate_text"><%= '"' + query + '"' + "에 대한 검색 결과가 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
         <% }else{ %>
-            <div class="cate_text"><%= '"'+query+'"' + "에 대한 검색 결과가 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
+            <div class="cate_text"><%= currentCategories[0].categoryName + " 카테고리에 상품이 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
         <% } %>
         <div class="cate_sort">
             <ul>
@@ -86,7 +86,7 @@
                 <% }); %>
             <% } else { %>
                 <tr>
-                    <td>등록된 상품이 없습니다./td>
+                    <td>등록된 상품이 없습니다.</td>
                 </tr>
             <% } %>
         </ul>
