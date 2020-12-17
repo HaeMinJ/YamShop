@@ -41,8 +41,6 @@
     .pagination .disabled {
         display: none;
     }
-
-
 </style>
 <% if (products.contents.length != 0) { %>
 <div class="" style="text-align:center;">
@@ -74,8 +72,8 @@
                 <% } %>
         >
             <button
-                    <% if(products.page < products.pnTotal){ %>
-                    onclick="insertParam('page',<%= i <= products.pnTotal? i : products.pnTotal %>)"
+            <% if(products.page < products.pnTotal){ %>
+                onclick="insertParam('page',<%= i <= products.pnTotal? i : products.pnTotal %>)"
                     <% } %>
                     class="waves-effect">
                 <i class="material-icons">chevron_right</i>

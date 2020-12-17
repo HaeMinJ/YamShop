@@ -1,0 +1,14 @@
+<script>
+    async function delete_product(prodSeq){
+        let result = await fetch('https://api.bomandyam.shop:3000/product/'+ prodSeq ,{
+            method: 'DELETE',
+        })
+        if(result.status === 200){
+            alert('상품이 삭제되었습니다.')
+            location.href = '/bomspick';
+        }
+        else{
+            alert('삭제에 실패하였습니다.')
+        }
+    }
+</script>
