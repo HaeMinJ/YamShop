@@ -66,6 +66,19 @@ router.post('/signin', async function(req, res){
 router.get('/request-reset', async(req, res) => {
     res.render('pages/request-reset')
 })
+router.post('/request-reset', async (req, res) =>{
+    let email = req.body.email
+    await fetch("https://api.bomandyam.shop:3000/user/forgot", {
+        method : 'post',
+        headers : {
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify({
+            email : email
+        })
+    })
+    res.redirect('/')
+})
 
 router.get('/reset/:token', async function(req, res) {
     let token = req.params.token;
