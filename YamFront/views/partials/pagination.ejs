@@ -33,7 +33,7 @@
     }
     /*활성화된 li 태그 셀렉트*/
     .pagination .active {
-        background-color: #008aff;
+        background-color: #dfdfdf;
         display: inline-block;
     }
 
@@ -55,7 +55,7 @@
                     onclick="insertParam('page',<%= products.pnStart-1 %>)"
                     <% } %>
             >
-                <i class="material-icons">chevron_left</i>
+                <i class="material-icons"><<</i>
             </button>
         </li>
         <% for(var i = products.pnStart; i <= products.pnEnd && i <= products.pnTotal; i++){ %>
@@ -63,7 +63,7 @@
         <% if(i === products.page){ %> class="active"
                 <% } %>
         >
-            <button onclick="insertParam('page',<%= i %>)"><%= i %></button>
+            <button class="paging_text" onclick="insertParam('page',<%= i %>)"><%= i %></button>
         </li>
         <% } %>
         <li
@@ -76,7 +76,7 @@
                 onclick="insertParam('page',<%= i <= products.pnTotal? i : products.pnTotal %>)"
                     <% } %>
                     class="waves-effect">
-                <i class="material-icons">chevron_right</i>
+                <i class="material-icons">>></i>
             </button>
         </li>
     </ul>

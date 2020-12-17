@@ -711,6 +711,13 @@ define({ "api": [
             "group": "Parameter",
             "type": "Number",
             "optional": false,
+            "field": "categorySeq",
+            "description": "<p>Optional categorySeq</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
             "field": "page",
             "description": "<p>Current page number</p>"
           },
@@ -720,6 +727,52 @@ define({ "api": [
             "optional": false,
             "field": "size",
             "description": "<p>Page size</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
+    "url": "/product/:prodSeq",
+    "title": "Request ProductInfo",
+    "name": "GetProductInfo",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "prodSeq",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "delete",
+    "url": "/product/:prodSeq",
+    "title": "DELETE ProductInfo",
+    "name": "GetProductInfo",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "prodSeq",
+            "description": ""
           }
         ]
       }

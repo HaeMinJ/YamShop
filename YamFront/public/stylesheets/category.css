@@ -57,18 +57,29 @@
     border-bottom: solid 1px #767676;
 
 }
+.cate_color{
+    font-weight: bold;
+    color: #fcb721;
+}
 
 .cate_sort{
     background-color: #eeeeee;
     width:1000px;
     height: 47px;
-    line-height: 50px;
+    line-height: 45px;
 }
 
 .cate_sort li{
     display: inline;
     font-size: 18px;
     padding-right: 20px;
+
+}
+.cate_sort li :hover{
+    background-color: #6F6F6F;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
 }
 
 .cate_ani_best{

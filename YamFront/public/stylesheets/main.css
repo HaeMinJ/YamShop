@@ -75,13 +75,20 @@ button{
 .btnAllCategory:hover ul{
     display: block;
     position: absolute;
+    top:130px;
+    margin-right: 140px;
     z-index: 14;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.5);
     color: white;
+
 }
-.btnAllCategory:hover li{
-    width:210px;
+.btnAllCategory:hover ul li{
+    width:200px;
     display: inline-block;
+    font-size: 15px;
+}
+.category_text{
+    color: white;
 }
 
 .search_area{
@@ -89,7 +96,7 @@ button{
     align-items: center;
     justify-content: space-between;
     width: 320px;
-    height: 37px;
+    height: 40px;
     border: 3px solid #FFCB12;
     border-radius: 31px;
 }
@@ -99,9 +106,16 @@ button{
     border: none 0;
     outline: none;
     margin-left: 20px;
+    line-height: 30px;
 }
-.search_img{
-    margin-right: 10px;
+input.search_img{
+    background: url("../images/search.svg") no-repeat;
+    border: none;
+    cursor: pointer;
+    width: 23px;
+    height: 24px;
+    color: rgba(0, 0, 0, 0);
+
 }
 
 /*헤더 css*/
@@ -193,6 +207,14 @@ button{
     padding-bottom: 5px;
 }
 /*컨테이너 css*/
+
+.paging_text{
+    font-size:  18px;
+    font-weight: bolder;
+    color: #404040;
+}
+
+/*페이징*/
 
 #footer{
     display: flex;
