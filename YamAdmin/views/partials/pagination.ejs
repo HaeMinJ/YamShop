@@ -41,6 +41,9 @@
     .pagination .disabled {
         display: none;
     }
+    .pagination_btn{
+        width: 50px;
+    }
 </style>
 <% if (products.contents.length != 0) { %>
     <div class="" style="text-align:center;">
@@ -55,7 +58,7 @@
                     onclick="insertParam('page',<%= products.pnStart-1 %>)"
                         <% } %>
                 >
-                    <i class="material-icons">chevron_left</i>
+                    <i class="material-icons"><<</i>
                 </button>
             </li>
             <% for(var i = products.pnStart; i <= products.pnEnd && i <= products.pnTotal; i++){ %>
@@ -63,7 +66,7 @@
                 <% if(i === products.page){ %> class="active"
                         <% } %>
                 >
-                    <button onclick="insertParam('page',<%= i %>)"><%= i %></button>
+                    <button class="pagination_btn" onclick="insertParam('page',<%= i %>)"><%= i %></button>
                 </li>
             <% } %>
             <li
@@ -76,7 +79,7 @@
                     onclick="insertParam('page',<%= i <= products.pnTotal? i : products.pnTotal %>)"
                         <% } %>
                     class="waves-effect">
-                    <i class="material-icons">chevron_right</i>
+                    <i class="material-icons">>></i>
                 </button>
             </li>
         </ul>

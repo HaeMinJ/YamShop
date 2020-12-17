@@ -29,7 +29,7 @@ app.use('/', indexRouter);
 app.use('/best', bestRouter);
 app.use('/auth', authRouter);
 app.use('/product',productRouter);
-app.use('/signature-pick',signatureRouter);
+app.use('/signaturepick',signatureRouter);
 app.use('/policy',policyRouter);
 app.use('/pet-info',petInfoRouter);
 
