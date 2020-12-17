@@ -19,7 +19,7 @@ router.get('/', async (req, res, next) => {
     size = Number(size) || 15;
     page = Number(page) || 1;
     query = query || '';
-    const pnSize = 10;
+    const pnSize = size;
     const skipSize = (page - 1) * size;
     switch(order){
         case 1:
