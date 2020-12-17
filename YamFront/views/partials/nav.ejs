@@ -14,28 +14,54 @@
         }
         return "";
     }
+    function setCookie(cookieName, cookieValue, cookieExpire, cookiePath, cookieDomain, cookieSecure){
+        var cookieText=escape(cookieName)+'='+escape(cookieValue);
+        cookieText+=(cookieExpire ? '; EXPIRES='+cookieExpire.toGMTString() : '');
+        cookieText+=(cookiePath ? '; PATH='+cookiePath : '');
+        cookieText+=(cookieDomain ? '; DOMAIN='+cookieDomain : '');
+        cookieText+=(cookieSecure ? '; SECURE' : '');
+        document.cookie=cookieText;
+    }
+
+    function deleteCookie(cookieName) {
+        var temp = getCookie(cookieName);
+        if (temp) {
+            setCookie(cookieName, temp, (new Date(1)));
+        }
+    }
+    function logout() {
+        deleteCookie('accessToken');
+        alert('로그아웃 되었습니다.');
+        location.href = '/';
+    }
 </script>
 <div id="header_wrap">
     <div class="headerContainer">
         <div></div>
         <h1 class="logo">
-            <a href="../index.html">
+            <a href="/">
                 <img src="../images/logo.svg" alt="메인페이지 로고">
             </a>
-            <a class="logo_text" href="../index.html">
+            <a class="logo_text" href="/">
                 <div class="logo_text">BOM and YAM</div>
             </a>
         </h1>
         <div class="navi">
             <ul class="navi_list">
-                    <li style="padding-right: 25px" id="non-login">
-                        <a href="../html/join.html">회원가입</a>
+                <li style="padding-right: 25px">
+                    <div id="non-login">
+                        <a href="/auth/signup">회원가입</a>
                         /
-                        <a href="../html/login.html">로그인</a>
-                    </li>
-                    <li>
-                        <a href="#" id="login">장바구니</a>
-                    </li>
+                        <a href="/auth/signin">로그인</a>
+                    </div>
+                </li>
+                <li>
+                    <div id="on-login">
+                        <span id="welcome_msg" style="padding-right: 25px"></span>
+                        <button onclick="logout();" style="padding-right: 15px">로그아웃</button>
+                        <a href="#">장바구니</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -51,7 +77,7 @@
             </div>
             <ul class="navi_list">
                 <li style="padding-right: 25px">
-                    <a href="../html/best.html">베스트</a>
+                    <a href="/best">베스트</a>
                 </li>
                 <li>
                     <a href="#">노하우</a>
@@ -69,13 +95,36 @@
 </div>
 <!--헤더-->
 <script>
-    let nonLogin = document.getElementById('non-login')
-    let login = document.getElementById('login')
-    if(getCookie('accessToken')){
-        nonLogin.style.display = "none";
-        login.style.display = 'inline-block';
-    }else{
+    let nonLogin = document.getElementById('non-login');
+    let login = document.getElementById('on-login');
+    let token = getCookie('accessToken');
+    if (token) {
+        try {
+            fetch('https://api.bomandyam.shop:3000/user/token-verification', {
+                headers: {
+                    'x-access-token': token
+                }
+            })
+            .then(userData => userData.json())
+            .then(userData => {
+                let msg = document.getElementById('welcome_msg')
+                msg.innerText = userData.name + "님 방문을 환영합니다."
+                nonLogin.style.display = "none";
+                login.style.display = 'inline-block';
+            })
+        } catch (e) {
+            nonLogin.style.display = "inline-block";
+            login.style.display = 'none';
+            console.log(e);
+            deleteCookie('accessToken')
+            alert("토큰이 만료되었습니다. 다시 로그인해주세요.")
+            location.href = '/';
+        }
+    } else {
+        console.log("NON LOGIN!");
         nonLogin.style.display = "inline-block";
         login.style.display = 'none';
     }
+    nonLogin.style.display = "inline-block";
+    login.style.display = 'none';
 </script>
