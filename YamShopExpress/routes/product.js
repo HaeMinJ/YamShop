@@ -106,6 +106,27 @@ router.get('/yamspick', async (req, res, next) => {
     }
 })
 /**
+ * @api {get} /product/recommend Request Recommend
+ * @apiName Get recommend
+ * @apiGroup Product
+ *
+ * @apiHeader {String} x-access-token
+ */
+
+router.get('/recommend', async (req, res, next) => {
+    let userInfo = req.userInfo;
+    if(userInfo){
+        try {
+            const data = await pool.query('select * from Product order by paymentCount limit 2', [])
+            return res.json(data[0])
+        } catch (err) {
+            return res.status(500).json(err)
+        }
+    }else {
+        res.status(403)
+    }
+})
+/**
  * @api {get} /product/dogbest Request Dog's Best Picks
  * @apiName GetProduct List by dog best
  * @apiGroup Product

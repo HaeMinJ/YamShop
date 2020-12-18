@@ -3,6 +3,13 @@
     <div class="float_menu">
         <div class="side_banner">
             <div class="side_title">추천상품</div>
+            <% if(products === undefined || products.length === 0) { %>
+                <!--            로그인해주세요.-->
+            <% }else{ %>
+                <% products.forEach( product =>{ %>
+                    <!--                상품 띄우기-->
+                <% }) %>
+            <% } %>
         </div>
     </div>
 </div>
