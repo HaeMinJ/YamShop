@@ -86,7 +86,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "routes/banner.js",
+    "filename": "routes/board.js",
     "groupTitle": "",
     "success": {
       "examples": [
@@ -118,7 +118,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "routes/board.js",
+    "filename": "routes/banner.js",
     "groupTitle": "",
     "success": {
       "examples": [
@@ -999,6 +999,26 @@ define({ "api": [
     "url": "/product/bomspick",
     "title": "Request Bomspick",
     "name": "GetProduct_List_by_bom",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
+  },
+  {
+    "type": "get",
+    "url": "/product/catbest",
+    "title": "Request Cat's Best Picks",
+    "name": "GetProduct_List_by_cat_best",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
+  },
+  {
+    "type": "get",
+    "url": "/product/dogbest",
+    "title": "Request Dog's Best Picks",
+    "name": "GetProduct_List_by_dog_best",
     "group": "ProductList",
     "version": "0.0.0",
     "filename": "routes/product.js",

@@ -105,7 +105,42 @@ router.get('/yamspick', async (req, res, next) => {
         return res.status(500).json(err)
     }
 })
+/**
+ * @api {get} /product/dogbest Request Dog's Best Picks
+ * @apiName GetProduct List by dog best
+ * @apiGroup ProductList
+ *
+ */
 
+router.get('/dogbest', async (req, res, next) => {
+    try {
+        let categorySeq = 2
+        let categoryData = await pool.query('SELECT PC2.* FROM ProdCategory AS PC JOIN ProdCategory AS PC2 where (PC.parentCategory = ? OR PC.categorySeq = ?) and (PC2.parentCategory = PC.categorySeq OR PC2.categorySeq = PC.categorySeq) GROUP BY  PC2.categorySeq ', [categorySeq, categorySeq]);
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [categoryData])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+
+})
+/**
+ * @api {get} /product/catbest Request Cat's Best Picks
+ * @apiName GetProduct List by cat best
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/catbest', async (req, res, next) => {
+    try {
+        let categorySeq = 3
+        let categoryData = await pool.query('SELECT PC2.* FROM ProdCategory AS PC JOIN ProdCategory AS PC2 where (PC.parentCategory = ? OR PC.categorySeq = ?) and (PC2.parentCategory = PC.categorySeq OR PC2.categorySeq = PC.categorySeq) GROUP BY  PC2.categorySeq ', [categorySeq, categorySeq]);
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [categoryData])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+
+})
 /**
  * @api {get} /product/:prodSeq Request ProductInfo
  * @apiName GetProductInfo
