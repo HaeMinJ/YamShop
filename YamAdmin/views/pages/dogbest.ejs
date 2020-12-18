@@ -10,6 +10,7 @@
 <body>
 <div class="wrap">
     <%- include ../partials/header_login.ejs -%>
+    <%- include ../partials/deleteprod.ejs -%>
     <div class="container">
         <div style="padding-bottom: 30px">
             <div class="index_title">
@@ -19,12 +20,12 @@
                 PRODUCT 관리
             </div>
             <ol>
-                <% if (products.contents.length != 0 ) { %>
-                    <% products.contents.forEach(function(product) { %>
+                <% if (products.length != 0 ) { %>
+                    <% products.forEach(function(product) { %>
                         <li>
                             <%- product.prodSeq %> .
                             <%- product.name %>
-                            <button onclick="delete_product(<%- product.prodSeq%>);">삭제</button>
+                            <button style="float: right" onclick="delete_product(<%- product.prodSeq%>);">삭제</button>
                         </li>
                     <% }); %>
                 <% } else { %>
@@ -34,22 +35,6 @@
                 <% } %>
             </ol>
         </div>
-        <div>
-            <div class="banner_title">상품 추가</div>
-            <div class="add_img">
-                <div class="add_title">상품 이미지</div>
-                <input style="padding-top: 5px" type="file">
-            </div>
-            <div class="add_name">
-                <div class="add_title">상품명</div>
-                <input type="text">
-            </div>
-            <div class="add_price">
-                <div class="add_title">상품 가격</div>
-                <input type="text">
-            </div>
-        </div>
-        <button class="file_btn">상품등록</button>
     </div>
 </div>
 </body>
