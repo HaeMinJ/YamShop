@@ -949,6 +949,29 @@ define({ "api": [
     "groupTitle": "Product"
   },
   {
+    "type": "delete",
+    "url": "/product/:prodSeq",
+    "title": "DELETE ProductInfo",
+    "name": "GetProductInfo",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "prodSeq",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
     "type": "get",
     "url": "/product/:prodSeq",
     "title": "Request ProductInfo",
@@ -972,27 +995,24 @@ define({ "api": [
     "groupTitle": "Product"
   },
   {
-    "type": "delete",
-    "url": "/product/:prodSeq",
-    "title": "DELETE ProductInfo",
-    "name": "GetProductInfo",
-    "group": "Product",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Int",
-            "optional": false,
-            "field": "prodSeq",
-            "description": ""
-          }
-        ]
-      }
-    },
+    "type": "get",
+    "url": "/product/bomspick",
+    "title": "Request Bomspick",
+    "name": "GetProduct_List_by_bom",
+    "group": "ProductList",
     "version": "0.0.0",
     "filename": "routes/product.js",
-    "groupTitle": "Product"
+    "groupTitle": "ProductList"
+  },
+  {
+    "type": "get",
+    "url": "/product/yamspick",
+    "title": "Request Yamspick",
+    "name": "GetProduct_List_by_yam",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
   },
   {
     "type": "post",

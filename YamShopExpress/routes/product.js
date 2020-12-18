@@ -75,6 +75,38 @@ router.get('/', async (req, res, next) => {
 })
 
 /**
+ * @api {get} /product/bomspick Request Bomspick
+ * @apiName GetProduct List by bom
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/bomspick', async (req, res, next) => {
+    try {
+        const data = await pool.query('select * from Product where bomspick = 1', [])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
+
+/**
+ * @api {get} /product/yamspick Request Yamspick
+ * @apiName GetProduct List by yam
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/yamspick', async (req, res, next) => {
+    try {
+        const data = await pool.query('select * from Product where yamspick = 1', [])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
+
+/**
  * @api {get} /product/:prodSeq Request ProductInfo
  * @apiName GetProductInfo
  * @apiGroup Product
