@@ -141,7 +141,7 @@ router.get('/dogbest', async (req, res, next) => {
         for(category of categoryData[0]){
             needCategories.push(category.categorySeq);
         }
-        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [needCategories])
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 15', [needCategories])
 
         return res.json(data[0])
     } catch (err) {
@@ -165,7 +165,7 @@ router.get('/catbest', async (req, res, next) => {
         for(category of categoryData[0]){
             needCategories.push(category.categorySeq);
         }
-        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [needCategories])
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 15', [needCategories])
         return res.json(data[0])
     } catch (err) {
         return res.status(500).json(err)
