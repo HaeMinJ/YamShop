@@ -40,7 +40,7 @@
         <button class="more_btn">more</button>
       </div>
       <ul class="ani_best">
-        <% dogbests.contents.forEach(product => { %>
+        <% dogbests.forEach(product => { %>
         <%- include('partials/product.ejs', {product : product} ); %>
         <% }) %>
       </ul>

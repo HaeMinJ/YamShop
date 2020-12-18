@@ -31,7 +31,7 @@
 </script>
 <head>
     <title>category</title>
-    <link rel="stylesheet" href="../stylesheets/category.css">
+    <link rel="stylesheet" href="/stylesheets/category.css">
     <%- include('../partials/header.ejs'); -%>
 <body>
 <div id="wrap">
@@ -43,7 +43,7 @@
 <div id="C_container">
     <div class="cateItem1">
         <ul class="cate_inav">
-            <li><a href="#"><img src="../images/home.svg" alt="홈 로고"></a></li>
+            <li><a href="#"><img src="/images/home.svg" alt="홈 로고"></a></li>
             <% currentCategories.reverse() %>
             <% currentCategories.forEach( category => { %>
                 <li><a href=<%= '/product?categorySeq=' + category.categorySeq %>> > <%= category.categoryName %>  </a>

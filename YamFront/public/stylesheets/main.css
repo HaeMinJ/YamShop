@@ -112,7 +112,7 @@ button{
     line-height: 30px;
 }
 input.search_img{
-    background: url("../images/search.svg") no-repeat;
+    background: url("/images/search.svg") no-repeat;
     border: none;
     cursor: pointer;
     width: 23px;
