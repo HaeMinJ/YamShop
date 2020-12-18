@@ -10,6 +10,7 @@ router.get('/', async function(req, res, next) {
 
     dogbests = await fetch('https://api.bomandyam.shop:3000/product/dogbest')
     dogbests = await dogbests.json()
+
     catbests = await fetch('https://api.bomandyam.shop:3000/product/catbest')
     catbests = await catbests.json()
   }catch (e) {

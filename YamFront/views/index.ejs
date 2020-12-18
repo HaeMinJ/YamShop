@@ -10,10 +10,10 @@
 <div id="wrap">
   <%-include('partials/nav.ejs',{categories});-%>
   <!--헤더-->
-  <a href="/signaturepick/bom">
+  <a href="/signature-pick/bom">
     <div class="BOM_icon">BOM's pick</div>
   </a>
-  <a href="/signaturepick/yam">
+  <a href="/signature-pick/yam">
     <div class="YAM_icon">YAM's pick</div>
   </a>
   <!-- 픽 고정배너-->
@@ -42,7 +42,7 @@
       </div>
       <ul class="ani_best">
         <% dogbests.forEach(product => { %>
-        <%- include('../partials/product', {product : product} ); %>
+        <%- include('partials/product.ejs', {product : product} ); %>
         <% }) %>
       </ul>
       <div class="main_ani_best">
@@ -54,13 +54,13 @@
       </div>
       <ul class="ani_best">
         <% catbests.forEach(product => { %>
-          <%- include('../partials/product', {product : product} ); %>
+          <%- include('partials/product.ejs', {product : product} ); %>
         <% }) %>
       </ul>
       <div class="main_ani_best">
         <div></div>
         <div class="ani_best_title">
-          NKOWHOW
+          KNOWHOW
         </div>
         <button class="more_btn">more</button>
       </div>
