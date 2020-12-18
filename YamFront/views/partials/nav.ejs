@@ -14,13 +14,14 @@
         }
         return "";
     }
-    function setCookie(cookieName, cookieValue, cookieExpire, cookiePath, cookieDomain, cookieSecure){
-        var cookieText=escape(cookieName)+'='+escape(cookieValue);
-        cookieText+=(cookieExpire ? '; EXPIRES='+cookieExpire.toGMTString() : '');
-        cookieText+=(cookiePath ? '; PATH='+cookiePath : '');
-        cookieText+=(cookieDomain ? '; DOMAIN='+cookieDomain : '');
-        cookieText+=(cookieSecure ? '; SECURE' : '');
-        document.cookie=cookieText;
+
+    function setCookie(cookieName, cookieValue, cookieExpire, cookiePath, cookieDomain, cookieSecure) {
+        var cookieText = escape(cookieName) + '=' + escape(cookieValue);
+        cookieText += (cookieExpire ? '; EXPIRES=' + cookieExpire.toGMTString() : '');
+        cookieText += (cookiePath ? '; PATH=' + cookiePath : '');
+        cookieText += (cookieDomain ? '; DOMAIN=' + cookieDomain : '');
+        cookieText += (cookieSecure ? '; SECURE' : '');
+        document.cookie = cookieText;
     }
 
     function deleteCookie(cookieName) {
@@ -29,6 +30,7 @@
             setCookie(cookieName, temp, (new Date(1)));
         }
     }
+
     function logout() {
         deleteCookie('accessToken');
         alert('로그아웃 되었습니다.');
@@ -39,10 +41,8 @@
     <div class="headerContainer">
         <div></div>
         <h1 class="logo">
-            <a href="/">
-                <img src="../images/logo.svg" alt="메인페이지 로고">
-            </a>
             <a class="logo_text" href="/">
+                <img src="../images/logo.svg" alt="메인페이지 로고">
                 <div class="logo_text">BOM and YAM</div>
             </a>
         </h1>
@@ -71,7 +71,10 @@
             <div class="btnAllCategory">전체 카테고리
                 <ul>
                     <% categories.forEach(category => { %>
-                        <li> <%- include('../partials/navigation', {category: category}); -%></li>
+                        <% if(category.parentCategory === 1 || category.parentCategory === 2 || category.parentCategory === 3){ %>
+
+                            <li> <%- include('../partials/navigation', {category: category}); -%></li>
+                        <% } %>
                     <% }) %>
                 </ul>
             </div>
@@ -105,13 +108,13 @@
                     'x-access-token': token
                 }
             })
-            .then(userData => userData.json())
-            .then(userData => {
-                let msg = document.getElementById('welcome_msg')
-                msg.innerText = userData.name + "님 방문을 환영합니다."
-                nonLogin.style.display = "none";
-                login.style.display = 'inline-block';
-            })
+                .then(userData => userData.json())
+                .then(userData => {
+                    let msg = document.getElementById('welcome_msg')
+                    msg.innerText = userData.name + "님 방문을 환영합니다."
+                    nonLogin.style.display = "none";
+                    login.style.display = 'inline-block';
+                })
         } catch (e) {
             nonLogin.style.display = "inline-block";
             login.style.display = 'none';

@@ -1,5 +1,53 @@
 define({ "api": [
   {
+    "type": "get",
+    "url": "/banner",
+    "title": "Request Banner information",
+    "name": "GetBannerList",
+    "group": "Banner",
+    "version": "0.0.0",
+    "filename": "routes/banner.js",
+    "groupTitle": "Banner",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n[\n{\n  \"boardSeq\" : 0,\n  \"boardName\" : \"Product\",\n  \"readLevel\" : 0,\n  \"writeLevel\" : 2\n},\n{\n  \"boardSeq\" : 1,\n  \"boardName\" : \"Event\",\n  \"readLevel\" : 0,\n  \"writeLevel\" : 2\n}\n]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/banner",
+    "title": "Add banner",
+    "name": "Post_Banner",
+    "group": "Banner",
+    "version": "0.0.0",
+    "filename": "routes/banner.js",
+    "groupTitle": "Banner"
+  },
+  {
+    "type": "delete",
+    "url": "/board/:boardSeq",
+    "title": "Delete board",
+    "name": "Delete_board",
+    "group": "Board",
+    "version": "0.0.0",
+    "filename": "routes/banner.js",
+    "groupTitle": "",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"boardSeq\" : 0,\n  \"boardName\" : \"Product\",\n  \"readLevel\" : 0,\n  \"writeLevel\" : 2\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "delete",
     "url": "/board/:boardSeq",
     "title": "Delete board",
@@ -39,6 +87,38 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "routes/board.js",
+    "groupTitle": "",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"boardSeq\" : 0,\n  \"boardName\" : \"Product\",\n  \"readLevel\" : 0,\n  \"writeLevel\" : 2\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/board/:boardSeq",
+    "title": "Request Board information",
+    "name": "GetBoard",
+    "group": "Board",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "boardSeq",
+            "description": "<p>Board's unique Seq.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/banner.js",
     "groupTitle": "",
     "success": {
       "examples": [
@@ -97,6 +177,25 @@ define({ "api": [
     "group": "Board",
     "version": "0.0.0",
     "filename": "routes/board.js",
+    "groupTitle": "",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"boardSeq\" : 0,\n  \"boardName\" : \"Product\",\n  \"readLevel\" : 0,\n  \"writeLevel\" : 2\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "patch",
+    "url": "/board/:boardSeq",
+    "title": "Modify board",
+    "name": "Modify_board",
+    "group": "Board",
+    "version": "0.0.0",
+    "filename": "routes/banner.js",
     "groupTitle": "",
     "success": {
       "examples": [
@@ -667,6 +766,120 @@ define({ "api": [
     }
   },
   {
+    "type": "post",
+    "url": "/payment/purchase",
+    "title": "결제 하기",
+    "name": "Purchase_Product",
+    "group": "Payment",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>사용자 접근 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "prodSeq",
+            "description": "<p>상품 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "purchaseInfo",
+            "description": "<p>거래 정보</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "paymentSeq",
+            "description": "<p>거래 번호</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/payment.js",
+    "groupTitle": "Payment"
+  },
+  {
+    "type": "post",
+    "url": "/payment",
+    "title": "결제 요청하기",
+    "name": "Request_Purchase_Product",
+    "group": "Payment",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>사용자 접근 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "prodSeq",
+            "description": "<p>상품 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "quantity",
+            "description": "<p>수량</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>상품 가격</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "deliveryFee",
+            "description": "<p>배달비</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "priceSum",
+            "description": "<p>총 가격</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/payment.js",
+    "groupTitle": "Payment"
+  },
+  {
     "type": "get",
     "url": "/pet",
     "title": "반려동물 정보 요청",
@@ -736,29 +949,6 @@ define({ "api": [
     "groupTitle": "Product"
   },
   {
-    "type": "get",
-    "url": "/product/:prodSeq",
-    "title": "Request ProductInfo",
-    "name": "GetProductInfo",
-    "group": "Product",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Int",
-            "optional": false,
-            "field": "prodSeq",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "routes/product.js",
-    "groupTitle": "Product"
-  },
-  {
     "type": "delete",
     "url": "/product/:prodSeq",
     "title": "DELETE ProductInfo",
@@ -782,11 +972,111 @@ define({ "api": [
     "groupTitle": "Product"
   },
   {
+    "type": "get",
+    "url": "/product/:prodSeq",
+    "title": "Request ProductInfo",
+    "name": "GetProductInfo",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "prodSeq",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
+    "url": "/product/bomspick",
+    "title": "Request Bomspick",
+    "name": "GetProduct_List_by_bom",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
+  },
+  {
+    "type": "get",
+    "url": "/product/catbest",
+    "title": "Request Cat's Best Picks",
+    "name": "GetProduct_List_by_cat_best",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
+  },
+  {
+    "type": "get",
+    "url": "/product/dogbest",
+    "title": "Request Dog's Best Picks",
+    "name": "GetProduct_List_by_dog_best",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
+  },
+  {
+    "type": "get",
+    "url": "/product/yamspick",
+    "title": "Request Yamspick",
+    "name": "GetProduct_List_by_yam",
+    "group": "ProductList",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "ProductList"
+  },
+  {
     "type": "post",
     "url": "/product",
     "title": "Add Product",
     "name": "Product_Post_For_Crawler",
     "group": "Product",
+    "version": "0.0.0",
+    "filename": "routes/product.js",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "patch",
+    "url": "/product/signaturepick/:prodSeq",
+    "title": "Add To Signature Pick",
+    "name": "Signature_Pick",
+    "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "prodSeq",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "who",
+            "description": "<p>bom : 봄이 yam : 얌이</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "isChecked",
+            "description": "<p>0: false 1: true</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/product.js",
     "groupTitle": "Product"

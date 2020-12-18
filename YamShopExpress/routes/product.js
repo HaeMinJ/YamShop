@@ -75,6 +75,73 @@ router.get('/', async (req, res, next) => {
 })
 
 /**
+ * @api {get} /product/bomspick Request Bomspick
+ * @apiName GetProduct List by bom
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/bomspick', async (req, res, next) => {
+    try {
+        const data = await pool.query('select * from Product where bomspick = 1', [])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
+
+/**
+ * @api {get} /product/yamspick Request Yamspick
+ * @apiName GetProduct List by yam
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/yamspick', async (req, res, next) => {
+    try {
+        const data = await pool.query('select * from Product where yamspick = 1', [])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
+/**
+ * @api {get} /product/dogbest Request Dog's Best Picks
+ * @apiName GetProduct List by dog best
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/dogbest', async (req, res, next) => {
+    try {
+        let categorySeq = 2
+        let categoryData = await pool.query('SELECT PC2.* FROM ProdCategory AS PC JOIN ProdCategory AS PC2 where (PC.parentCategory = ? OR PC.categorySeq = ?) and (PC2.parentCategory = PC.categorySeq OR PC2.categorySeq = PC.categorySeq) GROUP BY  PC2.categorySeq ', [categorySeq, categorySeq]);
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [categoryData])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+
+})
+/**
+ * @api {get} /product/catbest Request Cat's Best Picks
+ * @apiName GetProduct List by cat best
+ * @apiGroup ProductList
+ *
+ */
+
+router.get('/catbest', async (req, res, next) => {
+    try {
+        let categorySeq = 3
+        let categoryData = await pool.query('SELECT PC2.* FROM ProdCategory AS PC JOIN ProdCategory AS PC2 where (PC.parentCategory = ? OR PC.categorySeq = ?) and (PC2.parentCategory = PC.categorySeq OR PC2.categorySeq = PC.categorySeq) GROUP BY  PC2.categorySeq ', [categorySeq, categorySeq]);
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [categoryData])
+        return res.json(data[0])
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+
+})
+/**
  * @api {get} /product/:prodSeq Request ProductInfo
  * @apiName GetProductInfo
  * @apiGroup Product
@@ -119,6 +186,7 @@ router.delete('/:prodSeq', async (req, res, next) => {
  * @apiGroup Product
  *
  *
+ *
  */
 
 router.post('/', async (req, res, next) => {
@@ -131,6 +199,31 @@ router.post('/', async (req, res, next) => {
     }
 })
 
+/**
+ * @api {patch} /product/signaturepick/:prodSeq Add To Signature Pick
+ * @apiName Signature Pick
+ * @apiGroup Product
+ *
+ * @apiParam {Number} prodSeq
+ * @apiParam {String} who bom : 봄이 yam : 얌이
+ * @apiParam {Number} isChecked 0: false 1: true
+ */
+
+router.patch('/signaturepick/:prodSeq', async (req, res, next) =>{
+    const { who, isChecked } = req.body;
+    const {prodSeq} = req.params;
+    if(req.userInfo && req.userInfo.typeSeq === 1){
+        if(who === 'bom'){
+            let result = await pool.query("update Product SET bomspick = ? where prodSeq = ?",[isChecked, prodSeq])
+            res.status(200).send("")
+        }else if(who === 'yam'){
+            let result = await pool.query("update Product SET yamspick = ? where prodSeq = ?", [isChecked, prodSeq])
+            res.status(200).send("")
+        }
+    }else{
+        res.status(403).send("")
+    }
+})
 
 
 /**
