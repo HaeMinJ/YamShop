@@ -44,7 +44,7 @@ router.post('/', async (req, res, next) => {
     const { prodSeq, quantity, price, deliveryFee, priceSum } = req.body;
     if(userInfo){
         try{
-            const result = await pool.query('insert into Payment (prodSeq, deliveryState, userSeq, quantity, price) VALUES (?,?,?,?,?)', [prodSeq,0,userInfo.userSeq, quantity, price])
+            const result = await pool.query('insert into Payment (prodSeq, deliveryState, userSeq, quantity, price, deliveryFee, priceSum) VALUES (?,?,?,?,?,?,?)', [prodSeq,0,userInfo.userSeq, quantity, price,deliveryFee,priceSum])
             res.status(200).send(result[0])
         }catch (e) {
             console.log(e);
