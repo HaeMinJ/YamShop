@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>봄이와 얌</title>
+    <%-include('../partials/header');-%>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <%-include('../partials/nav.ejs',{categories});-%>
+    <!--헤더-->
+    <a href="/signaturepick/bom">
+        <div class="BOM_icon">BOM's pick</div>
+    </a>
+    <a href="/signaturepick/yam">
+        <div class="YAM_icon">YAM's pick</div>
+    </a>
+    <!-- 픽 고정배너-->
+    <div id="container">
+
+    </div>
+    <!--컨테이너 영역-->
+    <%-include('../partials/footer.ejs');-%>
+    <!--footer-->
+</div>
+</body>
+</html>
+

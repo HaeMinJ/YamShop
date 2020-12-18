@@ -28,7 +28,7 @@
                     <div></div>
                 </div>
                 <ul class="ani_best">
-                    <% products.forEach(product => { %>
+                    <% products.contents.forEach(product => { %>
                         <li> <%- include('../partials/product', {product: product});%></li>
                     <% }) %>
                 </ul>

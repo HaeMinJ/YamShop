@@ -10,15 +10,14 @@
 <div id="wrap">
   <%-include('partials/nav.ejs',{categories});-%>
   <!--헤더-->
-  <a href="/signature-pick/bom">
+  <a href="/signaturepick/bom">
     <div class="BOM_icon">BOM's pick</div>
   </a>
-  <a href="/signature-pick/yam">
+  <a href="/signaturepick/yam">
     <div class="YAM_icon">YAM's pick</div>
   </a>
   <!-- 픽 고정배너-->
   <div id="container">
-    <%-include('partials/floatbanner.ejs', {products : recommends});-%>
     <div class="main_visual">
       <div class="slide">
         <ul>
@@ -41,7 +40,7 @@
         <button class="more_btn">more</button>
       </div>
       <ul class="ani_best">
-        <% dogbests.forEach(product => { %>
+        <% dogbests.contents.forEach(product => { %>
         <%- include('partials/product.ejs', {product : product} ); %>
         <% }) %>
       </ul>

@@ -30,4 +30,16 @@ router.get('/:prodSeq', async function(req, res, next) {
     res.render('pages/product-info', { product: product, categories: categories  });
 });
 
+router.get('/:prodSeq/payment' , async function (req, res, next){
+    let prodSeq = req.params.prodSeq;
+    let categories = await fetch('https://api.bomandyam.shop:3000/category')
+    categories = await categories.json()
+
+    let result = await fetch('https://api.bomandyam.shop:3000/product/'+prodSeq)
+    let product = await result.json()
+
+    res.render('pages/payment', { product : product, categories: categories })
+})
+
+
 module.exports = router;
