@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel='stylesheet' href='/stylesheets/container.css' />
+    <link rel='stylesheet' href='/stylesheets/banner.css' />
+    <link rel='stylesheet' href='/stylesheets/product.css' />
+</head>
+<body>
+<div class="wrap">
+    <%- include ../partials/deleteprod.ejs -%>
+    <%- include ../partials/header_login.ejs -%>
+    <div class="container">
+        <div style="padding-bottom: 30px">
+            <div class="index_title">
+                상품 추가, 삭제
+            </div>
+            <div class="banner_title">
+                PRODUCT 관리
+            </div>
+            <ol>
+                <% if (products.contents.length != 0 ) { %>
+                    <% products.contents.forEach(function(product) { %>
+                        <li>
+                            <%- product.prodSeq %> .
+                            <%- product.name %>
+                            <button onclick="delete_product(<%- product.prodSeq%>);">삭제</button>
+                        </li>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td>등록된 상품이 없습니다</td>
+                    </tr>
+                <% } %>
+            </ol>
+        </div>
+        <%- include('../partials/pagination', {products: products}); -%>
+
+        <form action="/bomspick" method="post">
+            <div>
+                <div class="banner_title">상품 추가</div>
+                <div class="add_img">
+                    <div class="add_title">상품 이미지</div>
+                    <input style="padding-top: 5px" type="file" name="prod_file">
+                </div>
+                <div class="add_name">
+                    <div class="add_title">상품명</div>
+                    <input type="text" name="prod_title" placeholder="상품명">
+                </div>
+                <div class="add_price">
+                    <div class="add_title">상품 가격</div>
+                    <input type="text" name="prod_price" placeholder="상품가격">
+                </div>
+                <div class="add_cate">
+                    <div class="add_title">카테고리</div>
+                    <input type="text" name="prod_cate" placeholder="카테고리 번호 입력">
+                </div>
+            </div>
+            <button type="submit" class="file_btn">상품등록</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -14,16 +14,17 @@
 }
 
 ol{
+    width: 1000px;
     padding-left: 0;
     list-style: none;
 }
 
 ol li{
+    width: 1000px;
     font-weight: bolder;
     font-size: 30px;
     color: #6F6F6F;
     padding-bottom: 20px;
-    width: 800px;
 }
 
 button{

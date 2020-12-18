@@ -8,7 +8,7 @@ router.get('/', async function(req, res, next) {
     let query = req.query.query || '';
     let categorySeq = Number(req.query.categorySeq) || 1;
 
-    let products = await fetch('https://api.bomandyam.shop:3000/product?page='+page+'&size=15&categorySeq='+categorySeq+'&order='+order+'&query='+encodeURI(query))
+    let products = await fetch('https://api.bomandyam.shop:3000/product/dogbest')
     products = await products.json()
 
 
