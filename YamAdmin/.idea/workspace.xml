@@ -40,7 +40,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="10.17.49" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../YamFront" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -108,6 +108,7 @@
       <workItem from="1608214126649" duration="24890000" />
       <workItem from="1608277273764" duration="3348000" />
       <workItem from="1608280771426" duration="1545000" />
+      <workItem from="1608297051556" duration="636000" />
     </task>
     <servers />
   </component>
