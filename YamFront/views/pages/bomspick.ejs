@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="pick_product">
-                <% products.contents.forEach(product => { %>
+                <% products.forEach(product => { %>
                     <li> <%- include('../partials/product', {product: product});%></li>
                 <% }) %>
             </div>
