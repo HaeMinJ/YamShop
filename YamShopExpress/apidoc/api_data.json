@@ -999,40 +999,40 @@
     "url": "/product/bomspick",
     "title": "Request Bomspick",
     "name": "GetProduct_List_by_bom",
-    "group": "ProductList",
+    "group": "Product",
     "version": "0.0.0",
     "filename": "routes/product.js",
-    "groupTitle": "ProductList"
+    "groupTitle": "Product"
   },
   {
     "type": "get",
     "url": "/product/catbest",
     "title": "Request Cat's Best Picks",
     "name": "GetProduct_List_by_cat_best",
-    "group": "ProductList",
+    "group": "Product",
     "version": "0.0.0",
     "filename": "routes/product.js",
-    "groupTitle": "ProductList"
+    "groupTitle": "Product"
   },
   {
     "type": "get",
     "url": "/product/dogbest",
     "title": "Request Dog's Best Picks",
     "name": "GetProduct_List_by_dog_best",
-    "group": "ProductList",
+    "group": "Product",
     "version": "0.0.0",
     "filename": "routes/product.js",
-    "groupTitle": "ProductList"
+    "groupTitle": "Product"
   },
   {
     "type": "get",
     "url": "/product/yamspick",
     "title": "Request Yamspick",
     "name": "GetProduct_List_by_yam",
-    "group": "ProductList",
+    "group": "Product",
     "version": "0.0.0",
     "filename": "routes/product.js",
-    "groupTitle": "ProductList"
+    "groupTitle": "Product"
   },
   {
     "type": "post",

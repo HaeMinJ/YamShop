@@ -77,7 +77,7 @@ router.get('/', async (req, res, next) => {
 /**
  * @api {get} /product/bomspick Request Bomspick
  * @apiName GetProduct List by bom
- * @apiGroup ProductList
+ * @apiGroup Product
  *
  */
 
@@ -93,7 +93,7 @@ router.get('/bomspick', async (req, res, next) => {
 /**
  * @api {get} /product/yamspick Request Yamspick
  * @apiName GetProduct List by yam
- * @apiGroup ProductList
+ * @apiGroup Product
  *
  */
 
@@ -108,7 +108,7 @@ router.get('/yamspick', async (req, res, next) => {
 /**
  * @api {get} /product/dogbest Request Dog's Best Picks
  * @apiName GetProduct List by dog best
- * @apiGroup ProductList
+ * @apiGroup Product
  *
  */
 
@@ -116,9 +116,15 @@ router.get('/dogbest', async (req, res, next) => {
     try {
         let categorySeq = 2
         let categoryData = await pool.query('SELECT PC2.* FROM ProdCategory AS PC JOIN ProdCategory AS PC2 where (PC.parentCategory = ? OR PC.categorySeq = ?) and (PC2.parentCategory = PC.categorySeq OR PC2.categorySeq = PC.categorySeq) GROUP BY  PC2.categorySeq ', [categorySeq, categorySeq]);
-        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [categoryData])
+        let needCategories = [];
+        for(category of categoryData[0]){
+            needCategories.push(category.categorySeq);
+        }
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [needCategories])
+
         return res.json(data[0])
     } catch (err) {
+        console.log(err);
         return res.status(500).json(err)
     }
 
@@ -126,7 +132,7 @@ router.get('/dogbest', async (req, res, next) => {
 /**
  * @api {get} /product/catbest Request Cat's Best Picks
  * @apiName GetProduct List by cat best
- * @apiGroup ProductList
+ * @apiGroup Product
  *
  */
 
@@ -134,7 +140,11 @@ router.get('/catbest', async (req, res, next) => {
     try {
         let categorySeq = 3
         let categoryData = await pool.query('SELECT PC2.* FROM ProdCategory AS PC JOIN ProdCategory AS PC2 where (PC.parentCategory = ? OR PC.categorySeq = ?) and (PC2.parentCategory = PC.categorySeq OR PC2.categorySeq = PC.categorySeq) GROUP BY  PC2.categorySeq ', [categorySeq, categorySeq]);
-        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [categoryData])
+        let needCategories = [];
+        for(category of categoryData[0]){
+            needCategories.push(category.categorySeq);
+        }
+        const data = await pool.query('select * from Product where categorySeq IN (?) order by paymentCount desc limit 30', [needCategories])
         return res.json(data[0])
     } catch (err) {
         return res.status(500).json(err)

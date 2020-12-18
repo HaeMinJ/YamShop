@@ -41,50 +41,9 @@
         <button class="more_btn">more</button>
       </div>
       <ul class="ani_best">
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">건강백서 건강한 피부 6kg</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">건강백서 건강한 피부 6kg</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">건강백서 건강한 피부 6kg</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/dogbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">건강백서 건강한 피부 6kg</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
+        <% dogbests.forEach(product => { %>
+        <%- include('../partials/product', {product : product} ); %>
+        <% }) %>
       </ul>
       <div class="main_ani_best">
         <div></div>
@@ -94,50 +53,9 @@
         <button class="more_btn">more</button>
       </div>
       <ul class="ani_best">
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ani_product">
-              <img src="images/catbest.svg" width="200px" height="200px" alt="얌이">
-              <div class="product_text">
-                <div class="product_title">오픈팜 봄이의 닭고기&연어</div>
-                <b>32,000원</b>
-              </div>
-            </div>
-          </a>
-        </li>
+        <% catbests.forEach(product => { %>
+          <%- include('../partials/product', {product : product} ); %>
+        <% }) %>
       </ul>
       <div class="main_ani_best">
         <div></div>

@@ -39,14 +39,15 @@
 </div>
 <%- include('../partials/pick_icon.ejs'); -%>
 <!--픽 고정배너-->
-<%-include('../partials/floatbanner.ejs');-%>
+<%- include('../partials/floatbanner.ejs'); -%>
 <div id="C_container">
     <div class="cateItem1">
         <ul class="cate_inav">
             <li><a href="#"><img src="../images/home.svg" alt="홈 로고"></a></li>
             <% currentCategories.reverse() %>
             <% currentCategories.forEach( category => { %>
-                <li><a href=<%= '/product?categorySeq=' + category.categorySeq %>> > <%= category.categoryName %>  </a></li>
+                <li><a href=<%= '/product?categorySeq=' + category.categorySeq %>> > <%= category.categoryName %>  </a>
+                </li>
             <% }); %>
             <% currentCategories.reverse() %>
         </ul>
@@ -63,8 +64,10 @@
         <% if(query){ %>
             <div class="cate_text"><%= '"' + query + '"' + "에 대한 검색 결과가 " + products.totalCount.toLocaleString() + "개 있습니다." %></div>
         <% }else{ %>
-                <div class="cate_text"><strong class="cate_color"><%= currentCategories[0].categoryName%></strong> 카테고리에 상품이
-                    <strong class="cate_color"><%= products.totalCount.toLocaleString()%></strong>개 있습니다.</div>
+            <div class="cate_text"><strong class="cate_color"><%= currentCategories[0].categoryName %></strong> 카테고리에
+                상품이
+                <strong class="cate_color"><%= products.totalCount.toLocaleString() %></strong>개 있습니다.
+            </div>
         <% } %>
         <div class="cate_sort">
             <ul>
@@ -82,7 +85,7 @@
 
         <ul class="cate_ani_best">
             <% if (products.contents.length != 0) { %>
-                <% products.contents.forEach(function(product){ %>
+                <% products.contents.forEach(product=>{ %>
                     <li> <%- include('../partials/product', {product: product}); %></li>
                 <% }); %>
             <% } else { %>
